@@ -6,13 +6,17 @@ A setup guide for Claude Code in VS Code, plus a searchable catalog of 360+ repo
 
 **Read it here: https://mj-jinx.github.io/cardano-midnight-starter-kit/**
 
+> [!WARNING]
+> **Disclaimer.** This is a starter kit for learning, not an endorsement or an audit. Check every repo, tool and command yourself before you use it. This space changes fast: projects get updated, abandoned or compromised without notice, and entries here can go out of date. You use anything listed here at your own risk, and the author accepts no responsibility for any loss, damage or other outcome. Nothing here is financial, legal or security advice.
+
 ## What's inside
 
 - **Setup guide:** Windows (WSL), macOS and Linux. It covers VS Code extensions, Node, the Compact toolchain, the proof server, Aiken, Claude Code plugins and skills, MCP servers, wallets, faucets and first builds, plus watch-outs.
 - **Midnight tab:** official repos, community tools and DApps, every MIP, and the projects listed in Midnight Awesome DApps.
 - **Cardano tab:** languages, SDKs, chain APIs, infrastructure, DEXs, lending, oracles and research.
 - **AI tools tab:** Claude Code plugins, agent skills and MCP servers for both chains.
-- **Search and filters:** search across everything, then filter by category and by complexity level (Beginner, Intermediate or Advanced). A search can be shared as a link, for example `?q=oracle`.
+- **Labels:** every entry is marked **Official** (published by the chain's own organizations: Midnight, Cardano Foundation, Intersect, IOG) or **Community** (everyone else, listed but not audited), plus a category and a complexity level (Beginner, Intermediate or Advanced).
+- **Search and filters:** search across everything, then filter by source, level and category. A search can be shared as a link, for example `?q=oracle`.
 
 ## Updating
 

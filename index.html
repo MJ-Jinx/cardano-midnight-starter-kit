@@ -37,6 +37,7 @@
   --lvl-i: #1a4fb8;  --lvl-i-bg: #e4ebfa;
   --lvl-a: #a03a1c;  --lvl-a-bg: #fbe8e2;
   --warn: #8a5300;   --warn-bg: #fbf0dc;
+  --official-bg: #0e6b5f; --official-fg: #ffffff;
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
@@ -47,6 +48,7 @@
     --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
     --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
     --warn: #f2bb62; --warn-bg: #33270f;
+    --official-bg: #5fcdb9; --official-fg: #0e1015;
     color-scheme: dark;
   }
 }
@@ -55,6 +57,7 @@
   --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
   --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
   --warn: #f2bb62; --warn-bg: #33270f;
+  --official-bg: #5fcdb9; --official-fg: #0e1015;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -116,6 +119,10 @@ section > p, .prose { max-width: 68ch; }
 .chip.lvl-b { background: var(--lvl-b-bg); color: var(--lvl-b); }
 .chip.lvl-i { background: var(--lvl-i-bg); color: var(--lvl-i); }
 .chip.lvl-a { background: var(--lvl-a-bg); color: var(--lvl-a); }
+.chip.src-o { background: var(--official-bg); color: var(--official-fg); }
+.chip.src-c { color: var(--muted); border: 1px dashed var(--muted); }
+.notice { border: 1px solid var(--warn); background: var(--warn-bg); border-radius: 8px; padding: 12px 14px; font-size: 0.93rem; line-height: 1.55; max-width: 78ch; }
+.notice strong { color: var(--warn); }
 
 /* Setup view (unchanged guide) */
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
@@ -212,6 +219,7 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
   <div class="eyebrow">Starter kit · links checked weekly</div>
   <h1>Cardano &amp; Midnight Starter Kit</h1>
   <p class="lede">A setup guide for Claude Code in VS Code, plus a searchable catalog of 360+ repos, tools and Midnight Improvement Proposals for Cardano and Midnight. Every entry is labelled with a category and a complexity level.</p>
+  <p class="notice" role="note"><strong>Disclaimer.</strong> This is a starter kit for learning, not an endorsement or an audit. Check every repo, tool and command yourself before you use it. This space changes fast: projects get updated, abandoned or compromised without notice, and entries here can go out of date. You use anything listed here at your own risk, and the author accepts no responsibility for any loss, damage or other outcome. Nothing here is financial, legal or security advice.</p>
 </header>
 
 <nav class="bar" aria-label="Sections">
@@ -403,23 +411,29 @@ npm install @meshsdk/core</pre></div>
         <div><span class="chip lvl-i">Intermediate</span><span>SDKs, libraries, dev tools, demo apps</span></div>
         <div><span class="chip lvl-a">Advanced</span><span>Protocol contracts, node and ledger internals, research</span></div>
       </div>
+      <div class="levels">
+        <div><span class="chip src-o">&#10003; Official</span><span>Published by the chain's own organizations: Midnight, Cardano Foundation, Intersect, IOG</span></div>
+        <div><span class="chip src-c">Community</span><span>Everyone else. Listed, not audited, so check before you use it</span></div>
+      </div>
     </div>
     <div id="starts-wrap" hidden>
       <div class="kicker">Start here</div>
       <div class="starts" id="starts"></div>
     </div>
     <div class="filters">
+      <div class="frow" id="f-src"><span class="lbl">Source</span></div>
       <div class="frow" id="f-level"><span class="lbl">Level</span></div>
       <div class="frow" id="f-cat"><span class="lbl">Category</span></div>
     </div>
     <div class="status"><span id="count"></span><button type="button" id="clear" hidden>Clear filters</button></div>
-    <p class="disclaimer">Community projects are listed, not audited. Read the code before you run it, and never enter a real seed phrase into a demo.</p>
+    <p class="disclaimer">Check every repo before you use it, Official ones included. Community projects are listed, not audited. Never enter a real seed phrase into a demo.</p>
     <div id="results"></div>
   </section>
 </div>
 </main>
 
 <footer>
+  <strong>Disclaimer:</strong> This is a starter kit for learning, not an endorsement or an audit. Check every repo, tool and command yourself before you use it. This space changes fast: projects get updated, abandoned or compromised without notice, and entries here can go out of date. You use anything listed here at your own risk, and the author accepts no responsibility for any loss, damage or other outcome. Nothing here is financial, legal or security advice.<br><br>
   Catalog data lives in <code>data/catalog.json</code>. Stars, last-updated dates and archived status refresh weekly from GitHub, and every link is checked weekly.
   Source and fixes: <a href="https://github.com/MJ-Jinx/cardano-midnight-starter-kit" target="_blank" rel="noopener">github.com/MJ-Jinx/cardano-midnight-starter-kit</a>. Open an issue or pull request if something is out of date.
 </footer>
@@ -459,7 +473,7 @@ npm install @meshsdk/core</pre></div>
   var LVL = { Beginner: 'b', Intermediate: 'i', Advanced: 'a' };
   var CHAIN = { midnight: 'Midnight', cardano: 'Cardano', both: 'Cardano + Midnight' };
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var state = { view: 'setup', cat: 'all', level: 'all', q: '' };
+  var state = { view: 'setup', cat: 'all', level: 'all', src: 'all', q: '' };
   var data = null;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -469,7 +483,7 @@ npm install @meshsdk/core</pre></div>
   function catOf(it, tab) { return it.tab === tab ? it.category : it.alsoCategory; }
   function terms() { return state.q.toLowerCase().split(/\s+/).filter(Boolean); }
   function hay(it) {
-    return (it._h = it._h || [it.name, it.owner, it.repo, it.desc, it.category, it.alsoCategory, it.level, CHAIN[it.chain], (it.tags || []).join(' '), it.official ? 'official' : '', it.archived ? 'archived' : ''].join(' ').toLowerCase());
+    return (it._h = it._h || [it.name, it.owner, it.repo, it.desc, it.category, it.alsoCategory, it.level, CHAIN[it.chain], (it.tags || []).join(' '), it.official ? 'official' : 'community', it.archived ? 'archived' : ''].join(' ').toLowerCase());
   }
   function matchQ(it, t) { var h = hay(it); for (var i = 0; i < t.length; i++) if (h.indexOf(t[i]) < 0) return false; return true; }
   function cmp(a, b) {
@@ -486,11 +500,11 @@ npm install @meshsdk/core</pre></div>
     row.appendChild(head);
     row.appendChild(el('p', 'item-desc', it.desc));
     var meta = el('div', 'item-meta');
+    meta.appendChild(chip(it.official ? '✓ Official' : 'Community', it.official ? 'src-o' : 'src-c'));
     meta.appendChild(chip(it.level, 'lvl-' + LVL[it.level]));
     if (opts.showCat) meta.appendChild(chip(opts.tab ? catOf(it, opts.tab) : it.category, 'off'));
     if (opts.showChain && it.chain) meta.appendChild(chip(CHAIN[it.chain], it.chain === 'cardano' ? 'ada' : (it.chain === 'midnight' ? 'mn' : 'off')));
     if (!opts.showChain && it.chain === 'both') meta.appendChild(chip(CHAIN.both, 'off'));
-    if (it.official) meta.appendChild(chip('Official', 'off'));
     (it.tags || []).forEach(function (t) { if (t && t !== 'MIP') meta.appendChild(chip(t, 'off')); });
     if (it.archived) meta.appendChild(chip('Archived', 'arch'));
     var st = [];
@@ -532,7 +546,10 @@ npm install @meshsdk/core</pre></div>
     var t = terms();
     var tab = searching ? null : state.view;
     var pool = data.items.filter(function (it) { return !it.unavailable && (searching || inTab(it, tab)) && matchQ(it, t); });
-    var byLevel = pool.filter(function (it) { return state.level === 'all' || it.level === state.level; });
+    function srcOk(it) { return state.src === 'all' || (state.src === 'official') === !!it.official; }
+    function lvlOk(it) { return state.level === 'all' || it.level === state.level; }
+    var poolS = pool.filter(srcOk), poolL = pool.filter(lvlOk);
+    var byLevel = pool.filter(function (it) { return srcOk(it) && lvlOk(it); });
     var cats = searching ? null : data.tabs[tab].categories;
     var shown = byLevel.filter(function (it) { return searching || state.cat === 'all' || catOf(it, tab) === state.cat; });
 
@@ -542,21 +559,27 @@ npm install @meshsdk/core</pre></div>
     // Start-here cards
     var sw = document.getElementById('starts-wrap'), sg = document.getElementById('starts');
     sg.textContent = '';
-    var starts = (!searching && state.cat === 'all' && state.level === 'all') ? data.items.filter(function (it) { return it.start && it.tab === tab; }).sort(function (x, y) { return x.start - y.start; }) : [];
+    var starts = (!searching && state.cat === 'all' && state.level === 'all' && state.src === 'all') ? data.items.filter(function (it) { return it.start && it.tab === tab; }).sort(function (x, y) { return x.start - y.start; }) : [];
     sw.hidden = !starts.length;
     starts.forEach(function (it) {
       var c = el('div', 'start');
       var a = el('a', null, it.name); a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
       c.appendChild(a); c.appendChild(el('p', null, it.desc));
-      var m = el('div', 'chips'); m.appendChild(chip(it.level, 'lvl-' + LVL[it.level])); c.appendChild(m);
+      var m = el('div', 'chips'); m.appendChild(chip(it.official ? '✓ Official' : 'Community', it.official ? 'src-o' : 'src-c')); m.appendChild(chip(it.level, 'lvl-' + LVL[it.level])); c.appendChild(m);
       sg.appendChild(c);
     });
 
     // Level filter
     var lr = resetRow('f-level');
-    lr.appendChild(fbtn('All', pool.length, state.level === 'all', function () { state.level = 'all'; render(); }));
+    var sr = resetRow('f-src');
+    sr.appendChild(fbtn('All', poolL.length, state.src === 'all', function () { state.src = 'all'; render(); }));
+    [['official', 'Official'], ['community', 'Community']].forEach(function (o) {
+      var n = poolL.filter(function (it) { return (o[0] === 'official') === !!it.official; }).length;
+      if (n || state.src === o[0]) sr.appendChild(fbtn(o[1], n, state.src === o[0], function () { state.src = o[0]; render(); }));
+    });
+    lr.appendChild(fbtn('All', poolS.length, state.level === 'all', function () { state.level = 'all'; render(); }));
     data.levels.forEach(function (l) {
-      var n = pool.filter(function (it) { return it.level === l; }).length;
+      var n = poolS.filter(function (it) { return it.level === l; }).length;
       if (n || state.level === l) lr.appendChild(fbtn(l, n, state.level === l, function () { state.level = l; render(); }));
     });
     // Category filter (tab views only)
@@ -572,7 +595,7 @@ npm install @meshsdk/core</pre></div>
 
     var total = searching ? data.items.length : data.items.filter(function (it) { return inTab(it, tab); }).length;
     document.getElementById('count').textContent = 'Showing ' + shown.length + ' of ' + total;
-    document.getElementById('clear').hidden = !(state.cat !== 'all' || state.level !== 'all' || searching);
+    document.getElementById('clear').hidden = !(state.cat !== 'all' || state.level !== 'all' || state.src !== 'all' || searching);
 
     if (!shown.length) {
       var e = el('p', 'empty', 'Nothing matches. Try a shorter search or clear the filters.');
@@ -616,7 +639,7 @@ npm install @meshsdk/core</pre></div>
 
   var q = document.getElementById('q');
   q.addEventListener('input', function () { state.q = q.value; render(); });
-  document.getElementById('clear').addEventListener('click', function () { state.cat = 'all'; state.level = 'all'; state.q = ''; q.value = ''; render(); });
+  document.getElementById('clear').addEventListener('click', function () { state.cat = 'all'; state.level = 'all'; state.src = 'all'; state.q = ''; q.value = ''; render(); });
   document.querySelectorAll('.tabs a').forEach(function (a) {
     a.addEventListener('click', function () { if (state.q) { state.q = ''; q.value = ''; if (location.hash === '#' + a.dataset.view) render(); } });
   });
