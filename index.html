@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cardano &amp; Midnight Starter Kit</title>
+<meta name="description" content="Skills, plugins, MCP servers and repos for building on Cardano and Midnight, with a Claude Code + VS Code setup guide.">
+<meta property="og:title" content="Cardano &amp; Midnight Starter Kit">
+<meta property="og:description" content="Skills, plugins, MCP servers and repos for building on Cardano and Midnight, with a Claude Code + VS Code setup guide.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column (~880px) with a jump bar; steps as a numbered rail; lists as scrollable tables. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --code-bg: #eef1f6;
+  --fg: #151922;
+  --muted: #586074;
+  --line: #dce1e9;
+  --accent: #1a4fb8;
+  --cardano: #0033ad;
+  --midnight-bg: #151922;
+  --midnight-fg: #f4f6f9;
+  --use: #17703f;
+  --use-bg: #e3f3ea;
+  --warn: #8a5300;
+  --warn-bg: #fbf0dc;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1015; --surface: #161a22; --code-bg: #1d222c; --fg: #e6e9ef; --muted: #9ca4b6; --line: #2a303c;
+    --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
+    --use: #6fd39b; --use-bg: #15301f; --warn: #f2bb62; --warn-bg: #33270f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1015; --surface: #161a22; --code-bg: #1d222c; --fg: #e6e9ef; --muted: #9ca4b6; --line: #2a303c;
+  --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
+  --use: #6fd39b; --use-bg: #15301f; --warn: #f2bb62; --warn-bg: #33270f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 2.9rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.65rem; font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+code { font-family: var(--font-mono); font-size: 0.86em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+
+header.top { padding-block: 48px 28px; display: grid; gap: 14px; border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { max-width: 65ch; color: var(--muted); font-size: 1.08rem; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px 18px; padding-block: 14px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+nav.jump a { text-decoration: none; color: var(--fg); }
+nav.jump a:hover { color: var(--accent); }
+
+section { padding-block: 40px 8px; display: grid; gap: 18px; }
+section > p, .prose { max-width: 68ch; }
+
+.chips { display: inline-flex; flex-wrap: wrap; gap: 6px; vertical-align: middle; }
+.chip { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; border: 1px solid transparent; }
+.chip.ada { color: var(--cardano); border-color: var(--cardano); }
+.chip.mn { background: var(--midnight-bg); color: var(--midnight-fg); }
+.chip.use { background: var(--use-bg); color: var(--use); }
+.chip.off { color: var(--muted); border-color: var(--line); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 0.92rem; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fact strong { font-family: var(--font-display); font-size: 1.02rem; }
+.fact p { font-size: 0.95rem; color: var(--muted); }
+
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+ol.steps > li { counter-increment: step; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 0 14px; padding-block: 20px; border-top: 1px solid var(--line); }
+ol.steps > li::before {
+  content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  border: 1.5px solid var(--fg); margin-top: 1px;
+}
+.step-body { display: grid; gap: 10px; min-width: 0; }
+.step-body ul { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.note { font-size: 0.93rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; }
+.note.warn { border-left-color: var(--warn); color: var(--fg); }
+
+.code { position: relative; min-width: 0; }
+.code pre {
+  margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 14px 16px; padding-right: 74px; overflow-x: auto;
+  font-family: var(--font-mono); font-size: 0.83rem; line-height: 1.6;
+}
+.code pre .c { color: var(--muted); }
+.copy {
+  position: absolute; top: 8px; right: 8px; font: 600 0.72rem var(--font-mono); letter-spacing: 0.03em;
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 5px; padding: 4px 8px; cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+td:first-child { width: 30%; }
+td .name { font-weight: 600; display: block; }
+td .links { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.9rem; margin-top: 2px; }
+td .sub { color: var(--muted); font-size: 0.9rem; }
+td ul { margin: 6px 0 0; padding-left: 1.1em; color: var(--muted); font-size: 0.9rem; }
+
+.group-title { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; margin-top: 10px; }
+
+ul.watch { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+ul.watch li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+ul.watch li strong { display: block; }
+
+footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  ol.steps > li { grid-template-columns: 34px minmax(0, 1fr); gap: 0 10px; }
+  ol.steps > li::before { width: 28px; height: 28px; font-size: 0.92rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Starter kit · links checked 25 Oct 2026</div>
+  <h1>Cardano &amp; Midnight Starter Kit</h1>
+  <p class="lede">The skills, plugins, MCP servers and repos for building on Cardano and Midnight with Claude Code in VS Code, plus a step-by-step setup.</p>
+  <div class="legend">
+    <span><span class="chip ada">Cardano</span> Cardano</span>
+    <span><span class="chip mn">Midnight</span> Midnight</span>
+    <span><span class="chip off">Official</span> from the chain's own org</span>
+    <span><span class="chip warn">Caution</span> read the note first</span>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#basics">Basics</a>
+  <a href="#setup">Setup guide</a>
+  <a href="#skills">Claude skills &amp; plugins</a>
+  <a href="#mcp">MCP servers</a>
+  <a href="#midnight-repos">Midnight repos</a>
+  <a href="#cardano-repos">Cardano repos</a>
+  <a href="#watch">Watch-outs</a>
+</nav>
+
+<section id="basics">
+  <h2>Before you start</h2>
+  <div class="facts">
+    <div class="fact">
+      <strong>Two chains, two contract languages</strong>
+      <p>Cardano is the public UTxO chain. Contracts are usually written in <b>Aiken</b> and compile to Plutus V3. Midnight is the privacy partner chain. Contracts are written in <b>Compact</b> and every call produces a zero-knowledge proof.</p>
+    </div>
+    <div class="fact">
+      <strong>On Windows, Midnight work happens in WSL</strong>
+      <p>The Compact compiler has no Windows build. On Windows, typing <code>compact</code> runs the built-in NTFS compression tool, and it exits with success, so a build looks fine when nothing was built.</p>
+    </div>
+    <div class="fact">
+      <strong>Skills help but are not proof</strong>
+      <p>Midnight changes fast and AI knowledge of Compact goes stale. Compile <em>and</em> run anything Claude writes, and use <code>/midnight-verify:verify</code> before trusting a claim.</p>
+    </div>
+  </div>
+</section>
+
+<section id="setup">
+  <h2>Setup guide: Claude Code + VS Code</h2>
+  <p>Written for a Windows machine. On macOS or Linux, skip step 1 and run everything in your normal terminal.</p>
+
+  <ol class="steps">
+    <li><div class="step-body">
+      <h3>Install WSL, VS Code and Docker on Windows</h3>
+      <p>In PowerShell (run as administrator), install Ubuntu under WSL2, then reboot:</p>
+      <div class="code"><pre>wsl --install -d Ubuntu</pre></div>
+      <ul>
+        <li>Install <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> and <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">Docker Desktop</a>. In Docker Desktop, go to Settings › Resources › WSL integration and turn on Ubuntu.</li>
+        <li>Install Chrome for the wallet extensions.</li>
+        <li>Reference: <a href="https://learn.microsoft.com/windows/wsl/install" target="_blank" rel="noopener">Microsoft WSL install guide</a>.</li>
+      </ul>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Add the VS Code extensions</h3>
+      <ul>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" rel="noopener">Claude Code</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl" target="_blank" rel="noopener">WSL</a>, which opens folders inside Ubuntu</li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=TxPipe.aiken" target="_blank" rel="noopener">Aiken</a> for Aiken syntax and diagnostics</li>
+        <li>Compact Language Support. It is not on the Marketplace. Get the VSIX from the <a href="https://docs.midnight.network/getting-started/installation" target="_blank" rel="noopener">Midnight install page</a>, then use Extensions › ⋯ › Install from VSIX.</li>
+      </ul>
+      <p>Always open projects from the Ubuntu terminal so VS Code connects to WSL. When VS Code asks, install the extensions "in WSL" too.</p>
+      <div class="code"><pre>mkdir -p ~/code &amp;&amp; cd ~/code
+code .</pre></div>
+      <p class="note">Docs: <a href="https://code.claude.com/docs/en/vs-code" target="_blank" rel="noopener">Claude Code in VS Code</a>. The extension and the <code>claude</code> CLI share the same plugins, skills and MCP config.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Install Node 22 and the Claude Code CLI inside WSL</h3>
+      <p>Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a> using the install line from its README, then:</p>
+      <div class="code"><pre>nvm install 22
+corepack enable          <span class="c"># gives you Yarn 4 for the official examples</span>
+curl -fsSL https://claude.ai/install.sh | bash
+claude --version</pre></div>
+      <p class="note">Install guide: <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">code.claude.com/docs/en/setup</a>.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Install the Compact toolchain (Midnight)</h3>
+      <div class="code"><pre>curl --proto '=https' --tlsv1.2 -LsSf https://github.com/midnightntwrk/compact/releases/latest/download/compact-installer.sh | sh
+<span class="c"># restart the terminal, then pin the compiler version from the support matrix</span>
+compact update 0.31.1
+compact compile --version</pre></div>
+      <p class="note">As of 25 Oct 2026, 0.31.1 is both the version in the docs example and the one the official examples pin. Check the <a href="https://docs.midnight.network/relnotes/support-matrix" target="_blank" rel="noopener">support matrix</a> first. A bare <code>compact update</code> takes the newest release, which can be ahead of the public networks.</p>
+      <p class="note warn"><code>compact compile +&lt;version&gt;</code> only <em>selects</em> a version you already have. Run <code>compact update &lt;version&gt;</code> first, or the build fails on a clean machine.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Run a local proof server (Docker)</h3>
+      <div class="code"><pre>docker run -p 6300:6300 midnightntwrk/proof-server:8.1.3</pre></div>
+      <ul>
+        <li>The tag is the one the docs list today. Match it to the support matrix.</li>
+        <li>In the Lace wallet, go to Settings › Midnight and choose <code>Local (http://localhost:6300)</code>.</li>
+        <li>The <code>create-mn-app</code> and <code>midnight-examples</code> projects start their own proof server with Docker Compose. You only need this one for wallets and the public networks.</li>
+      </ul>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Install Aiken (Cardano)</h3>
+      <div class="code"><pre>curl --proto '=https' --tlsv1.2 -LsSf https://install.aiken-lang.org | sh
+aikup                    <span class="c"># installs the latest Aiken</span>
+aiken --version</pre></div>
+      <p class="note">Aiken also runs natively on Windows: <code>powershell -c "irm https://windows.aiken-lang.org | iex"</code>. See the <a href="https://aiken-lang.org/installation-instructions" target="_blank" rel="noopener">install guide</a>.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Install the Claude Code plugins and skills</h3>
+      <p><b>Midnight</b> (official marketplace, maintained in the <code>midnightntwrk</code> org):</p>
+      <div class="code"><pre>claude plugin marketplace add https://midnightntwrk.expert
+claude plugin install --scope user midnight-expert@midnight-expert
+claude plugin install --scope user compact-core@midnight-expert
+claude plugin install --scope user compact-examples@midnight-expert
+claude plugin install --scope user midnight-dapp-dev@midnight-expert
+claude plugin install --scope user midnight-verify@midnight-expert
+claude plugin install --scope user midnight-tooling@midnight-expert
+claude plugin install --scope user midnight-wallet@midnight-expert</pre></div>
+      <p>Restart Claude Code, then run <code>/midnight-expert:doctor</code> to check the environment.</p>
+      <p><b>Edda Labs Midnight plugin:</b></p>
+      <div class="code"><pre>claude plugin marketplace add eddalabs/edda-marketplace
+claude plugin install --scope user midnight@edda-labs-marketplace</pre></div>
+      <p><b>Cardano</b>:</p>
+      <div class="code"><pre>npx skills add Flux-Point-Studios/cardano-agent-skills
+claude plugin marketplace add cardano-foundation/cardano-dev-skills
+claude plugin install --scope user cardano-dev-skills@cardano-dev-skills</pre></div>
+      <p class="note warn">Before installing the full <code>cardano-dev-skills</code> plugin, read the <a href="#watch">watch-outs</a>. It ships thousands of third-party doc files.</p>
+      <p class="note">Keep things current with <code>claude plugin marketplace update &lt;name&gt;</code> and then <code>claude plugin update &lt;plugin&gt;@&lt;marketplace&gt;</code>. Docs: <a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener">plugins</a>, <a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">skills</a>.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Add MCP servers</h3>
+      <div class="code"><pre>claude mcp add --scope user midnight -- npx -y midnight-mcp@latest
+claude mcp add --scope user octocode -- npx -y octocode-mcp
+claude mcp add --scope user nightgate --env ODATANO_ACCESS_KEY=oda_... -- npx -y @odatano/nightgate-mcp
+claude mcp list</pre></div>
+      <ul>
+        <li>The ODATANO servers need an ODATANO access key. <code>@odatano/core-mcp</code> is the Cardano one and is added the same way.</li>
+        <li>For agent wallet operations on Cardano, <code>npx @indigoprotocol/cardano-mcp setup</code> sets up the optional provider used by the <code>cardano-mcp-*</code> skills. Use a test wallet only.</li>
+        <li>On native Windows (not WSL), wrap the command as <code>cmd /c npx …</code>.</li>
+      </ul>
+      <p class="note">Docs: <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">MCP in Claude Code</a>.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Set up wallets and get test funds</h3>
+      <ul>
+        <li><b>Midnight:</b> install <a href="https://www.lace.io" target="_blank" rel="noopener">Lace</a> (Midnight enabled) or the <a href="https://1am.xyz" target="_blank" rel="noopener">1AM wallet</a>. Get tNIGHT from the <a href="https://faucet.preprod.midnight.network/" target="_blank" rel="noopener">Preprod faucet</a> or the <a href="https://faucet.preview.midnight.network/" target="_blank" rel="noopener">Preview faucet</a>. Fees are paid in DUST, which accrues from NIGHT you hold.</li>
+        <li><b>Midnight endpoints:</b> Preview has public Midnight-hosted endpoints. Preprod and Mainnet RPC go through Blockfrost and need a token from a "Midnight Preprod" (or Mainnet) project on <a href="https://blockfrost.io" target="_blank" rel="noopener">blockfrost.io</a>.</li>
+        <li><b>Cardano:</b> set Lace or Eternl to Preprod, get test ADA from the <a href="https://docs.cardano.org/cardano-testnets/tools/faucet" target="_blank" rel="noopener">testnet faucet</a>, and create a free Cardano Preprod project key on Blockfrost, or use <a href="https://koios.rest" target="_blank" rel="noopener">Koios</a>.</li>
+      </ul>
+      <p class="note">A brand-new wallet on Midnight Preprod takes about 78 minutes to sync to the chain tip, according to the official examples README. Start on the local devnet.</p>
+    </div></li>
+
+    <li><div class="step-body">
+      <h3>Build something</h3>
+      <p><b>Midnight</b>: scaffold, then follow the official learning path. Run this in WSL:</p>
+      <div class="code"><pre>npx create-mn-app@latest my-app
+cd my-app
+npm run setup            <span class="c"># local devnet + compile + deploy; no wallet or faucet needed</span></pre></div>
+      <p>Next, work through <a href="https://github.com/midnightntwrk/midnight-examples" target="_blank" rel="noopener">midnight-examples</a> in order: hello-world, private-bid, battleship, private-tip-jar, shielded-chips, then zk-loan.</p>
+      <p><b>Cardano</b>: an Aiken validator, plus MeshJS for off-chain transaction building:</p>
+      <div class="code"><pre>aiken new my-org/hello
+cd hello
+aiken check &amp;&amp; aiken build   <span class="c"># writes plutus.json, the contract blueprint</span>
+npm install @meshsdk/core</pre></div>
+      <p><b>Try these in Claude Code:</b> <code>/midnight-dapp-dev:init</code>, <code>/compact-cli-dev:init</code>, <code>/midnight-tooling:devnet</code>, <code>/compact-core:review-compact</code>, <code>/compact-core:audit-compact</code>, and the <code>cf-review-contract</code> skill for Aiken validators.</p>
+    </div></li>
+  </ol>
+</section>
+
+<section id="skills">
+  <h2>Claude Code skills &amp; plugins</h2>
+
+  <div class="group-title"><h3>Midnight</h3><span class="chip mn">Midnight</span></div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Name</th><th>What it gives you</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">midnight-expert marketplace</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/midnight-expert" target="_blank" rel="noopener">GitHub</a><a href="https://midnightntwrk.expert" target="_blank" rel="noopener">midnightntwrk.expert</a></div></td>
+        <td>The main Midnight toolkit, with 16 plugins:
+          <ul>
+            <li><b>compact-core</b>: Compact syntax, ledger, privacy and disclosure, tokens, review and security audit</li>
+            <li><b>compact-examples</b>: compilable example contracts</li>
+            <li><b>midnight-dapp-dev</b>: Vite + React DApp scaffold and wallet wiring</li>
+            <li><b>compact-cli-dev</b>: CLI scaffold for your contract</li>
+            <li><b>midnight-verify</b>: checks claims by compiling and running code</li>
+            <li><b>midnight-tooling</b>: Compact CLI, devnet, proof server, troubleshooting</li>
+            <li><b>midnight-wallet</b>, <b>midnight-cq</b>, <b>core-concepts</b>, <b>midnight-status-codes</b>, <b>proof-server</b>, <b>midnight-indexer</b>, <b>midnight-node</b>, <b>midnight-fact-check</b>, <b>midnight-plugin-utils</b>, and the <b>midnight-expert</b> meta-plugin</li>
+          </ul></td></tr>
+      <tr><td><span class="name">Edda Labs <code>midnight</code> plugin</span>
+        <div class="links"><a href="https://github.com/eddalabs/edda-marketplace" target="_blank" rel="noopener">edda-marketplace</a></div></td>
+        <td>Five skills from Edda Labs: Midnight docs and doc repos, contract patterns, examples, and a project starter.</td></tr>
+      <tr><td><span class="name">midnight-compact</span><span class="chips"><span class="chip warn">Caution</span></span>
+        <div class="links"><a href="https://github.com/ADAvault/midnight-skill" target="_blank" rel="noopener">ADAvault/midnight-skill</a></div></td>
+        <td>A single skill for writing and testing Compact contracts. One known error: it treats <code>sealed</code> fields as private. They are write-once, not private.</td></tr>
+      <tr><td><span class="name">midnight_agent_skills</span>
+        <div class="links"><a href="https://github.com/mzf11125/midnight_agent_skills" target="_blank" rel="noopener">mzf11125/midnight_agent_skills</a></div></td>
+        <td>Seven modular skills, including <code>midnight-api</code> (SDK packages and APIs), <code>midnight-concepts</code>, and <code>midnight-network</code> (node and indexer infrastructure).</td></tr>
+      <tr><td><span class="name">midnight-agent-skills</span>
+        <div class="links"><a href="https://github.com/UvRoxx/midnight-agent-skills" target="_blank" rel="noopener">UvRoxx/midnight-agent-skills</a></div></td>
+        <td>Skills for Compact syntax, SDK integration, deployment and testing, including <code>midnight-test-runner</code>.</td></tr>
+      <tr><td><span class="name">1AM Midnight skill</span>
+        <div class="links"><a href="https://github.com/webisoftSoftware/1AM-Midnight-Skill" target="_blank" rel="noopener">webisoftSoftware/1AM-Midnight-Skill</a></div></td>
+        <td>1AM wallet connection, ProofStation hosted proving, and DUST-sponsored transactions, so users don't pay fees.</td></tr>
+      <tr><td><span class="name">Midnight-Skills (MIDSKILLS)</span><span class="chips"><span class="chip warn">Caution</span></span>
+        <div class="links"><a href="https://github.com/Kali-Decoder/Midnight-Skills" target="_blank" rel="noopener">Kali-Decoder/Midnight-Skills</a></div></td>
+        <td>A community catalog of 15 skills, including <code>multinetwork</code> for running one codebase on local, Preview, Preprod and Mainnet. Read the files on GitHub instead of running its installer, which reports your GitHub identity to its analytics.</td></tr>
+      <tr><td><span class="name">create-effectstream-app</span><span class="chips"><span class="chip ada">Cardano</span></span>
+        <div class="links"><a href="https://github.com/effectstream/effectstream" target="_blank" rel="noopener">effectstream/effectstream</a></div></td>
+        <td>A multi-chain DApp engine (formerly Paima) covering Midnight, Cardano, EVM and more. It's a heavy stack (Postgres, sync node, batcher), so only use it when you need cross-chain.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="group-title"><h3>Cardano</h3><span class="chip ada">Cardano</span></div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Name</th><th>What it gives you</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">cardano-agent-skills</span>
+        <div class="links"><a href="https://github.com/Flux-Point-Studios/cardano-agent-skills" target="_blank" rel="noopener">Flux-Point-Studios</a></div></td>
+        <td>Guidance skills are kept separate from "operator" skills, which only run commands when you invoke them.
+          <ul>
+            <li><b>cardano-cli-*</b>: wallets, transactions, Plutus script spends, staking, and a doctor that detects your CLI version</li>
+            <li><b>aiken-smart-contracts</b>, <b>plutus-v3-conway</b>, <b>meshjs-cardano</b>, <b>cardano-protocol-params</b></li>
+            <li><b>aiken-dex-security-audit</b> and <b>aiken-validator-redteam</b>: adversarial audits that write proof-of-concept tests</li>
+            <li><b>hydra-head</b> (+ troubleshooter), <b>cardano-devnet-in-a-box</b> (node + Hydra + Ogmios + Kupo)</li>
+            <li><b>koios-agent-wallet</b>, <b>cardano-mcp-*</b> (balances, $handle lookup, staking, signing)</li>
+          </ul></td></tr>
+      <tr><td><span class="name">cardano-dev-skills</span><span class="chips"><span class="chip off">Official</span><span class="chip warn">Caution</span></span>
+        <div class="links"><a href="https://github.com/cardano-foundation/cardano-dev-skills" target="_blank" rel="noopener">cardano-foundation</a></div></td>
+        <td>15 skills from the Cardano Foundation, including <code>cf-review-contract</code>, <code>cf-debug-transaction</code>, <code>cf-design-token</code> and <code>cf-optimize-validator</code>. The full plugin bundles a large set of third-party docs. Its own threat model lists prompt injection through those docs as a risk.</td></tr>
+      <tr><td><span class="name">skills CLI</span>
+        <div class="links"><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills</a><a href="https://skills.sh" target="_blank" rel="noopener">skills.sh</a></div></td>
+        <td>The <code>npx skills add owner/repo</code> installer used for the non-plugin skills above.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="mcp">
+  <h2>MCP servers</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Server</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">midnight-mcp</span><span class="chips"><span class="chip mn">Midnight</span></span>
+        <div class="links"><a href="https://github.com/Olanetsoft/midnight-mcp" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>Searches Midnight docs and repos, compiles and reviews Compact, and flags breaking changes between versions. No API key needed.</td></tr>
+      <tr><td><span class="name">ODATANO core-mcp</span><span class="chips"><span class="chip ada">Cardano</span></span>
+        <div class="links"><a href="https://www.npmjs.com/package/@odatano/core-mcp" target="_blank" rel="noopener">npm</a></div></td>
+        <td>Cardano reads, unsigned transaction builds, signing hand-off and submit through ODATANO. Needs an access key.</td></tr>
+      <tr><td><span class="name">ODATANO nightgate-mcp</span><span class="chips"><span class="chip mn">Midnight</span></span>
+        <div class="links"><a href="https://github.com/ODATANO/NIGHTGATE-MCP" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>The NIGHTGATE attestation layer: anchor and prove documents, selective disclosure, and swap offers. Needs an access key.</td></tr>
+      <tr><td><span class="name">Octocode</span>
+        <div class="links"><a href="https://github.com/bgauryy/octocode" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>Searches code across GitHub. Useful for checking how the official repos actually do something.</td></tr>
+      <tr><td><span class="name">cardano-mcp</span><span class="chips"><span class="chip ada">Cardano</span></span>
+        <div class="links"><a href="https://github.com/IndigoProtocol/cardano-mcp" target="_blank" rel="noopener">IndigoProtocol</a></div></td>
+        <td>Wallet operations for agents. Optional backend for the <code>cardano-mcp-*</code> skills. It holds keys, so use a test wallet.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="midnight-repos">
+  <div class="group-title"><h2>Midnight repos &amp; docs</h2><span class="chip mn">Midnight</span></div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Link</th><th>Why open it</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">Developer docs</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://docs.midnight.network/getting-started/installation" target="_blank" rel="noopener">Install</a><a href="https://docs.midnight.network/relnotes/support-matrix" target="_blank" rel="noopener">Support matrix</a><a href="https://github.com/midnightntwrk/midnight-docs" target="_blank" rel="noopener">Source</a></div></td>
+        <td>Start here. Check the support matrix every time you pin a version.</td></tr>
+      <tr><td><span class="name">create-mn-app</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/create-mn-app" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>Project scaffolder with templates for hello-world, battleship, bboard and leaderboard. Its local devnet comes pre-funded.</td></tr>
+      <tr><td><span class="name">midnight-examples</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/midnight-examples" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>The official learning path in one monorepo. Every example compiles and runs on one pinned toolchain.</td></tr>
+      <tr><td><span class="name">example-bboard</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/example-bboard" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>A bulletin board with contract, CLI and React UI. A good model for a full DApp.</td></tr>
+      <tr><td><span class="name">Compact</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/compact" target="_blank" rel="noopener">Releases</a><a href="https://github.com/LFDT-Minokawa/compact" target="_blank" rel="noopener">Compiler source</a><a href="https://github.com/midnightntwrk/setup-compact-action" target="_blank" rel="noopener">CI action</a></div></td>
+        <td>CLI releases, the compiler source (useful for settling syntax questions), and a GitHub Action for CI builds.</td></tr>
+      <tr><td><span class="name">SDKs</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/midnight-js" target="_blank" rel="noopener">midnight-js</a><a href="https://github.com/midnightntwrk/midnight-wallet" target="_blank" rel="noopener">wallet SDK</a><a href="https://github.com/midnightntwrk/midnight-dapp-connector-api" target="_blank" rel="noopener">DApp connector API</a></div></td>
+        <td>TypeScript SDK, wallet SDK, and the wallet-to-DApp API.</td></tr>
+      <tr><td><span class="name">OpenZeppelin Compact contracts</span>
+        <div class="links"><a href="https://github.com/OpenZeppelin/compact-contracts" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>Reusable Compact modules for access control, tokens, multisig, security and crypto utilities.</td></tr>
+      <tr><td><span class="name">Specs &amp; proposals</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/midnightntwrk/midnight-ledger" target="_blank" rel="noopener">ledger</a><a href="https://github.com/midnightntwrk/midnight-improvement-proposals" target="_blank" rel="noopener">MIPs</a></div></td>
+        <td>How transactions, tokens and DUST actually work, and what is changing next.</td></tr>
+      <tr><td><span class="name">Starter templates</span>
+        <div class="links"><a href="https://github.com/eddalabs/midnight-starter-template" target="_blank" rel="noopener">Edda Labs</a><a href="https://github.com/eddalabs/modular-starter" target="_blank" rel="noopener">modular-starter</a><a href="https://github.com/MeshJS/midnight-starter-template" target="_blank" rel="noopener">MeshJS</a></div></td>
+        <td>Community React monorepo starters. The MeshJS one was last updated in Feb 2026, so check its SDK versions.</td></tr>
+      <tr><td><span class="name">1AM tools</span>
+        <div class="links"><a href="https://1am.xyz" target="_blank" rel="noopener">Wallet</a><a href="https://build.1am.xyz" target="_blank" rel="noopener">AI Builder</a><a href="https://explorer.1am.xyz" target="_blank" rel="noopener">Explorer</a></div></td>
+        <td>Wallet, a browser-based contract builder, a block explorer, and ProofStation hosted proving.</td></tr>
+      <tr><td><span class="name">Discover &amp; ask</span>
+        <div class="links"><a href="https://github.com/midnightntwrk/midnight-awesome-dapps" target="_blank" rel="noopener">Awesome DApps</a><a href="https://awesomemidnight.com" target="_blank" rel="noopener">awesomemidnight.com</a><a href="https://forum.midnight.network" target="_blank" rel="noopener">Forum</a><a href="https://discord.gg/midnight" target="_blank" rel="noopener">Discord</a></div></td>
+        <td>See what others have built, and get help.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="cardano-repos">
+  <div class="group-title"><h2>Cardano repos &amp; docs</h2><span class="chip ada">Cardano</span></div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Link</th><th>Why open it</th></tr></thead>
+    <tbody>
+      <tr><td><span class="name">Developer Portal</span>
+        <div class="links"><a href="https://developers.cardano.org" target="_blank" rel="noopener">developers.cardano.org</a><a href="https://github.com/cardano-foundation/developer-portal" target="_blank" rel="noopener">Source</a></div></td>
+        <td>The starting point for Cardano, with guides for every tool below.</td></tr>
+      <tr><td><span class="name">Aiken</span>
+        <div class="links"><a href="https://aiken-lang.org" target="_blank" rel="noopener">aiken-lang.org</a><a href="https://github.com/aiken-lang/aiken" target="_blank" rel="noopener">compiler</a><a href="https://github.com/aiken-lang/stdlib" target="_blank" rel="noopener">stdlib</a></div></td>
+        <td>The contract language most new Cardano projects use. Do the tutorials on the site first.</td></tr>
+      <tr><td><span class="name">MeshJS</span>
+        <div class="links"><a href="https://meshjs.dev" target="_blank" rel="noopener">meshjs.dev</a><a href="https://github.com/MeshJS/mesh" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>TypeScript transaction building, wallet connectors and React components.</td></tr>
+      <tr><td><span class="name">Lucid Evolution</span>
+        <div class="links"><a href="https://github.com/Anastasia-Labs/lucid-evolution" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>An alternative off-chain TypeScript framework.</td></tr>
+      <tr><td><span class="name">Chain data &amp; APIs</span>
+        <div class="links"><a href="https://blockfrost.io" target="_blank" rel="noopener">Blockfrost</a><a href="https://github.com/blockfrost/blockfrost-js" target="_blank" rel="noopener">blockfrost-js</a><a href="https://koios.rest" target="_blank" rel="noopener">Koios</a><a href="https://ada-anvil.io" target="_blank" rel="noopener">Ada Anvil</a></div></td>
+        <td>Query the chain without running a node. Blockfrost needs a free project key. Koios is a community-run API. Ada Anvil offers hosted transaction building, minting and swaps.</td></tr>
+      <tr><td><span class="name">Node &amp; CLI</span><span class="chips"><span class="chip off">Official</span></span>
+        <div class="links"><a href="https://github.com/IntersectMBO/cardano-node" target="_blank" rel="noopener">cardano-node</a><a href="https://github.com/IntersectMBO/cardano-cli" target="_blank" rel="noopener">cardano-cli</a></div></td>
+        <td>Running a node and building transactions by hand. The cardano-cli skills cover this.</td></tr>
+      <tr><td><span class="name">Indexing &amp; local devnets</span>
+        <div class="links"><a href="https://github.com/CardanoSolutions/ogmios" target="_blank" rel="noopener">Ogmios</a><a href="https://github.com/CardanoSolutions/kupo" target="_blank" rel="noopener">Kupo</a><a href="https://github.com/bloxbean/yaci-devkit" target="_blank" rel="noopener">Yaci DevKit</a></div></td>
+        <td>A WebSocket bridge to the node, a lightweight chain index, and a one-command local devnet.</td></tr>
+      <tr><td><span class="name">Hydra</span>
+        <div class="links"><a href="https://hydra.family" target="_blank" rel="noopener">hydra.family</a><a href="https://github.com/cardano-scaling/hydra" target="_blank" rel="noopener">GitHub</a></div></td>
+        <td>Layer-2 state channels for fast, cheap off-chain transactions.</td></tr>
+      <tr><td><span class="name">Standards &amp; wallets</span>
+        <div class="links"><a href="https://github.com/cardano-foundation/CIPs" target="_blank" rel="noopener">CIPs</a><a href="https://github.com/Cardano-Forge/weld" target="_blank" rel="noopener">Weld</a></div></td>
+        <td>CIP-30 is the browser wallet API. Weld is a wallet connector built on it.</td></tr>
+      <tr><td><span class="name">Test ADA</span>
+        <div class="links"><a href="https://docs.cardano.org/cardano-testnets/tools/faucet" target="_blank" rel="noopener">Testnet faucet</a></div></td>
+        <td>Free Preprod and Preview ADA.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="watch">
+  <h2>Watch-outs</h2>
+  <ul class="watch">
+    <li><strong>Old tutorials point at archived repos.</strong><code>example-counter</code> and <code>midnight-local-dev</code> are archived. Use <code>create-mn-app</code> and <code>midnight-examples</code> instead. Today the official examples pin Compact language 0.23, compiler 0.31.1, and midnight-js 4.1.1.</li>
+    <li><strong>A successful <code>compact</code> run on Windows proves nothing.</strong>It's the NTFS tool, and it exits 0. Run <code>which compact</code> inside WSL to confirm you're using the real one.</li>
+    <li><strong>Pin compiler versions explicitly.</strong>Run <code>compact update &lt;v&gt;</code> before <code>compact compile +&lt;v&gt;</code>, and match the support matrix, not the newest release.</li>
+    <li><strong>The cardano-dev-skills plugin bundles a lot of third-party documentation.</strong>Its own supply-chain notes list prompt injection through those docs as a risk. You can copy only the skills you need.</li>
+    <li><strong>The MIDSKILLS installer reports your GitHub identity to its analytics.</strong>Read the skill files on GitHub instead.</li>
+    <li><strong>MCP servers and operator skills that can sign must only use test wallets.</strong>Never give an agent a key that holds real funds.</li>
+  </ul>
+</section>
+
+<footer>
+  Every GitHub repo here was checked on 25 Oct 2026: it exists and isn't archived. The install commands come from each project's current README or docs. Version numbers change often, so check the linked source before you pin one.
+  Source and fixes: <a href="https://github.com/MJ-Jinx/cardano-midnight-starter-kit" target="_blank" rel="noopener">github.com/MJ-Jinx/cardano-midnight-starter-kit</a>. Open an issue or pull request if something is out of date.
+</footer>
+</div>
+
+<script>
+(function () {
+  document.querySelectorAll('.code').forEach(function (box) {
+    var pre = box.querySelector('pre');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy command');
+    btn.addEventListener('click', function () {
+      var text = pre.innerText.replace(/\s+#[^\n]*$/gm, '').trim();
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1400); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1400);
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, fallback);
+        } else { fallback(); }
+      } catch (e) { fallback(); }
+    });
+    box.appendChild(btn);
+  });
+})();
+</script>
+</body>
+</html>
