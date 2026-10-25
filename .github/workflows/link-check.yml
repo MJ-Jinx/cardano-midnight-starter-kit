@@ -24,7 +24,9 @@ jobs:
           # 403/429: some docs and npm pages block or rate-limit CI bots but load fine in a browser
           args: >-
             --no-progress
-            --max-retries 3
+            --max-retries 4
+            --retry-wait-time 10
+            --max-concurrency 8
             --accept 200..=299,403,429
             --exclude "^https://fonts\.(googleapis|gstatic)\.com"
             index.html README.md data/catalog.json
