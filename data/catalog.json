@@ -5421,7 +5421,12 @@
    "start": 8,
    "note": null,
    "tags": [],
-   "links": [],
+   "links": [
+    {
+     "label": "MIPs website",
+     "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/"
+    }
+   ],
    "stars": 21,
    "updated": "2026-10",
    "archived": false
@@ -5492,7 +5497,7 @@
   {
    "name": "MIP-0001: Midnight Improvement Proposal Process",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0001-mip-process.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0001-mip-process",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5516,7 +5521,7 @@
   {
    "name": "MIP-0002: Public Contract Log Emission for Compact Smart Contracts",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0002-public-contract-log-emission.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0002-public-contract-log-emission",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5540,7 +5545,7 @@
   {
    "name": "MIP-0003: ECDSA signature support",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0003-ecdsa-support.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0003-ecdsa-support",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5564,7 +5569,7 @@
   {
    "name": "MIP-0004: Fungible Token Standard with UTXO Conversion Extensions",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0004-fungible-token-standard-with-utxo.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0004-fungible-token-standard-with-utxo",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5588,7 +5593,7 @@
   {
    "name": "MIP-0005: Offer Files",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0005-offer-files.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0005-offer-files",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5612,7 +5617,7 @@
   {
    "name": "MIP-0006: Peer-to-Peer Atomic Swaps",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0006-p2p-atomic-swaps.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0006-p2p-atomic-swaps",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5636,7 +5641,7 @@
   {
    "name": "MIP-0007: Midnight Name Service — Canonical Registry and Resolver Standard",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0007-name-service-registry-and-resolver.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0007-name-service-registry-and-resolver",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5660,7 +5665,7 @@
   {
    "name": "MIP-0008: CAIP-2 Network Identifiers for Midnight",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0008-caip-2-network-identifiers.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0008-caip-2-network-identifiers",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5684,7 +5689,7 @@
   {
    "name": "MIP-0009: Lazy Contract State Query RPC",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0009-query-contract-state-rpc.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0009-query-contract-state-rpc",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5708,7 +5713,7 @@
   {
    "name": "MIP-0010: Consensus Migration from AURA to BABE",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0010-aura-to-babe-migration.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0010-aura-to-babe-migration",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5732,7 +5737,7 @@
   {
    "name": "MIP-0011: Native Shielded Token Standard",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0011-native-shielded-token.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0011-native-shielded-token",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5756,7 +5761,7 @@
   {
    "name": "MIP-0012: Contract Custody of Midnight-Native Assets",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0012-native-asset-custody.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0012-native-asset-custody",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5780,7 +5785,7 @@
   {
    "name": "MIP-0013: Multi-key Account Authorisation for Custody Contracts",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0013-account-authorisation.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0013-account-authorisation",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5804,7 +5809,7 @@
   {
    "name": "MIP-0014: Native Unshielded Token Standard",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0014-native-unshielded-token.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0014-native-unshielded-token",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5828,7 +5833,7 @@
   {
    "name": "MIP-0015: Wallet-derived deterministic secrets",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0015-wallet-derived-deterministic-secrets.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0015-wallet-derived-deterministic-secrets",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5852,7 +5857,7 @@
   {
    "name": "MIP-0016: NIGHT Staking",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0016-night-staking.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0016-night-staking",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5876,7 +5881,7 @@
   {
    "name": "MIP-0017: Signature-Authorized Shielded Spends with VRF Nullifiers",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0017-shielded-spend-auth/mip-0017-shielded-spend-auth.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0017-shielded-spend-auth/mip-0017-shielded-spend-auth",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5900,7 +5905,7 @@
   {
    "name": "MIP-0018: On-Chain Token Metadata Emission (TokenMetadata Events)",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0018-on-chain-token-metadata.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0018-on-chain-token-metadata",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5924,7 +5929,7 @@
   {
    "name": "MIP-0019: Multipart Event",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0019-multipart-event.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0019-multipart-event",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5948,7 +5953,7 @@
   {
    "name": "MIP-0020: On-Demand Prover Keys from Bundled ZKIR",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0020-prover-key-regeneration.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0020-prover-key-regeneration",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5972,7 +5977,7 @@
   {
    "name": "MIP-0021: Domain-Separation Convention",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0021-domain-separation.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0021-domain-separation",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -5996,7 +6001,7 @@
   {
    "name": "MIP-0022: Recovery Paths for Custody Accounts",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0022-account-recovery.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0022-account-recovery",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6020,7 +6025,7 @@
   {
    "name": "MIP-0023: Committee Bridge Consensus Integration",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0023-committee-bridge-consensus.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0023-committee-bridge-consensus",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6044,7 +6049,7 @@
   {
    "name": "MIP-0024: Block Production Rewards Payout on Cardano",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0024-block-production-rewards.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0024-block-production-rewards",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6068,7 +6073,7 @@
   {
    "name": "MIP-0025: Managed Private State and Capsule Runtime",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0025-capsule-runtime.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0025-capsule-runtime",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6092,7 +6097,7 @@
   {
    "name": "MIP-0026: Interim Ledger State Management",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0026-interim-ledger-state.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0026-interim-ledger-state",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6116,7 +6121,7 @@
   {
    "name": "MIP-0027: Transaction Revalidation Cache",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0027-transaction-revalidation-cache.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0027-transaction-revalidation-cache",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6140,7 +6145,7 @@
   {
    "name": "MIP-0029: Midnight Agent Identity Standard (MAIS)",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0029-midnight-agent-identity-standard.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0029-midnight-agent-identity-standard",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6164,7 +6169,7 @@
   {
    "name": "MIP-0030: ECDSA Authorisation for Custody Accounts",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0030-ecdsa-account-authorisation.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0030-ecdsa-account-authorisation",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6188,7 +6193,7 @@
   {
    "name": "MIP-0031: Midnight Message Signing",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0031-message-signing/mip-0031-message-signing.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0031-message-signing/mip-0031-message-signing",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -6212,7 +6217,7 @@
   {
    "name": "MIP-0032: Private Credential Registry and Soulbound Profile",
    "owner": null,
-   "url": "https://github.com/midnightntwrk/midnight-improvement-proposals/blob/main/mips/mip-0032-private-credential-registry.md",
+   "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/mips/mip-0032-private-credential-registry",
    "repo": null,
    "tab": "midnight",
    "also": null,
