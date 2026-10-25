@@ -1,0 +1,32 @@
+name: Refresh catalog
+
+on:
+  schedule:
+    - cron: "0 5 * * 0" # Sundays 05:00 UTC, the day before the link check
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Update stars, dates and archived status
+        run: python3 scripts/refresh_catalog.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes and rebuild the site
+        run: |
+          if git diff --quiet; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Refresh catalog metadata"
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cardano &amp; Midnight Starter Kit</title>
-<meta name="description" content="Skills, plugins, MCP servers and repos for building on Cardano and Midnight, with a Claude Code + VS Code setup guide.">
+<meta name="description" content="Setup guide plus a searchable catalog of skills, plugins, MCP servers, repos and MIPs for building on Cardano and Midnight.">
 <meta property="og:title" content="Cardano &amp; Midnight Starter Kit">
 <meta property="og:description" content="Skills, plugins, MCP servers and repos for building on Cardano and Midnight, with a Claude Code + VS Code setup guide.">
 <meta property="og:type" content="website">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: one reading column (~880px) with a jump bar; steps as a numbered rail; lists as scrollable tables. */
+/* Layout: one reading column with a sticky tab bar (Setup / Midnight / Cardano / AI tools + search); catalog rows grouped by category. */
 :root {
   --bg: #f4f6f9;
   --surface: #ffffff;
@@ -33,10 +33,10 @@
   --cardano: #0033ad;
   --midnight-bg: #151922;
   --midnight-fg: #f4f6f9;
-  --use: #17703f;
-  --use-bg: #e3f3ea;
-  --warn: #8a5300;
-  --warn-bg: #fbf0dc;
+  --lvl-b: #17703f;  --lvl-b-bg: #e3f3ea;
+  --lvl-i: #1a4fb8;  --lvl-i-bg: #e4ebfa;
+  --lvl-a: #a03a1c;  --lvl-a-bg: #fbe8e2;
+  --warn: #8a5300;   --warn-bg: #fbf0dc;
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
@@ -45,14 +45,16 @@
   :root:not([data-theme="light"]) {
     --bg: #0e1015; --surface: #161a22; --code-bg: #1d222c; --fg: #e6e9ef; --muted: #9ca4b6; --line: #2a303c;
     --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
-    --use: #6fd39b; --use-bg: #15301f; --warn: #f2bb62; --warn-bg: #33270f;
+    --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
+    --warn: #f2bb62; --warn-bg: #33270f;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e1015; --surface: #161a22; --code-bg: #1d222c; --fg: #e6e9ef; --muted: #9ca4b6; --line: #2a303c;
   --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
-  --use: #6fd39b; --use-bg: #15301f; --warn: #f2bb62; --warn-bg: #33270f;
+  --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
+  --warn: #f2bb62; --warn-bg: #33270f;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -64,7 +66,7 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 0 64px;
 }
-.wrap { max-width: 880px; margin: 0 auto; }
+.wrap { max-width: 920px; margin: 0 auto; }
 a { color: var(--accent); text-underline-offset: 2px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
@@ -74,35 +76,53 @@ h2 { font-size: 1.65rem; font-weight: 700; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 p { margin: 0; }
 code { font-family: var(--font-mono); font-size: 0.86em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
 
-header.top { padding-block: 48px 28px; display: grid; gap: 14px; border-bottom: 1px solid var(--line); }
+header.top { padding-block: 44px 22px; display: grid; gap: 12px; }
 .eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .lede { max-width: 65ch; color: var(--muted); font-size: 1.08rem; }
 
-nav.jump { display: flex; flex-wrap: wrap; gap: 8px 18px; padding-block: 14px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
-nav.jump a { text-decoration: none; color: var(--fg); }
-nav.jump a:hover { color: var(--accent); }
+/* Tab bar + search */
+.bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; padding-block: 8px;
+}
+.tabs { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.tabs a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+.tabs a:hover { color: var(--fg); }
+.tabs a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--fg); }
+.tabs .n { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 400; color: var(--muted); margin-left: 5px; }
+.search { position: relative; margin-left: auto; flex: 1 1 240px; max-width: 340px; }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--muted); fill: none; stroke-width: 2; pointer-events: none; }
+.search input {
+  width: 100%; font: inherit; font-size: 0.95rem; color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px 7px 34px;
+}
+.search input::placeholder { color: var(--muted); }
+.search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
 
-section { padding-block: 40px 8px; display: grid; gap: 18px; }
+section { padding-block: 34px 8px; display: grid; gap: 18px; }
+[id] { scroll-margin-top: 76px; }
 section > p, .prose { max-width: 68ch; }
 
 .chips { display: inline-flex; flex-wrap: wrap; gap: 6px; vertical-align: middle; }
-.chip { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; border: 1px solid transparent; }
+.chip { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; border: 1px solid transparent; line-height: 1.5; }
 .chip.ada { color: var(--cardano); border-color: var(--cardano); }
 .chip.mn { background: var(--midnight-bg); color: var(--midnight-fg); }
-.chip.use { background: var(--use-bg); color: var(--use); }
 .chip.off { color: var(--muted); border-color: var(--line); }
 .chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.arch { background: var(--code-bg); color: var(--muted); }
+.chip.lvl-b { background: var(--lvl-b-bg); color: var(--lvl-b); }
+.chip.lvl-i { background: var(--lvl-i-bg); color: var(--lvl-i); }
+.chip.lvl-a { background: var(--lvl-a-bg); color: var(--lvl-a); }
 
-.legend { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 0.92rem; color: var(--muted); align-items: center; }
-.legend span { display: inline-flex; gap: 6px; align-items: center; }
-
+/* Setup view (unchanged guide) */
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
 .fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .fact strong { font-family: var(--font-display); font-size: 1.02rem; }
 .fact p { font-size: 0.95rem; color: var(--muted); }
-
-ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; counter-reset: step; }
 ol.steps > li { counter-increment: step; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 0 14px; padding-block: 20px; border-top: 1px solid var(--line); }
 ol.steps > li::before {
   content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
@@ -113,7 +133,6 @@ ol.steps > li::before {
 .step-body ul { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
 .note { font-size: 0.93rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; }
 .note.warn { border-left-color: var(--warn); color: var(--fg); }
-
 .code { position: relative; min-width: 0; }
 .code pre {
   margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
@@ -126,58 +145,90 @@ ol.steps > li::before {
   background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 5px; padding: 4px 8px; cursor: pointer;
 }
 .copy:hover { border-color: var(--accent); color: var(--accent); }
-
-.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
-th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
-tr:last-child td { border-bottom: 0; }
-th { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
-td:first-child { width: 30%; }
-td .name { font-weight: 600; display: block; }
-td .links { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.9rem; margin-top: 2px; }
-td .sub { color: var(--muted); font-size: 0.9rem; }
-td ul { margin: 6px 0 0; padding-left: 1.1em; color: var(--muted); font-size: 0.9rem; }
-
-.group-title { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; margin-top: 10px; }
-
 ul.watch { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 ul.watch li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
 ul.watch li strong { display: block; }
 
+/* Catalog view */
+.cat-head { display: grid; gap: 8px; }
+.cat-head p { color: var(--muted); max-width: 70ch; }
+.levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 18px; font-size: 0.9rem; color: var(--muted); }
+.levels div { display: flex; gap: 8px; align-items: baseline; }
+.filters { display: grid; gap: 10px; }
+.frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.frow .lbl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.fbtn {
+  font: inherit; font-size: 0.86rem; color: var(--fg); background: var(--surface); cursor: pointer;
+  border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; white-space: nowrap;
+}
+.fbtn:hover { border-color: var(--fg); }
+.fbtn[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.fbtn .k { font-family: var(--font-mono); font-size: 0.72rem; opacity: 0.7; margin-left: 5px; }
+.status { font-size: 0.9rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: space-between; }
+.status button { font: inherit; font-size: 0.9rem; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+.starts { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.start { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.start a { font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.start a:hover { text-decoration: underline; }
+.start p { font-size: 0.9rem; color: var(--muted); }
+.kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.group { display: grid; gap: 0; }
+#results { display: grid; gap: 30px; }
+.group h3 { display: flex; align-items: baseline; gap: 10px; padding-bottom: 8px; border-bottom: 1.5px solid var(--fg); }
+.group h3 .k { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 400; color: var(--muted); }
+.item { padding-block: 13px; border-bottom: 1px solid var(--line); display: grid; gap: 5px; min-width: 0; }
+.item-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.item-name { font-weight: 600; font-size: 1.02rem; text-decoration: none; overflow-wrap: anywhere; }
+.item-name:hover { text-decoration: underline; }
+.owner { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); overflow-wrap: anywhere; }
+.item-desc { font-size: 0.95rem; max-width: 75ch; }
+.item-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.82rem; }
+.stats { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.xlinks { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; font-size: 0.85rem; }
+.item-note { font-size: 0.88rem; border-left: 3px solid var(--warn); padding-left: 10px; color: var(--fg); }
+.empty { padding: 28px 0; color: var(--muted); }
+.disclaimer { font-size: 0.88rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; }
+
 footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   body { font-size: 16px; }
+  .search { flex-basis: 100%; max-width: none; margin-left: 0; }
+  .bar { position: static; }
+  .tabs { gap: 2px 14px; }
+  .tabs a { font-size: 0.95rem; }
+  [id] { scroll-margin-top: 12px; }
   ol.steps > li { grid-template-columns: 34px minmax(0, 1fr); gap: 0 10px; }
   ol.steps > li::before { width: 28px; height: 28px; font-size: 0.92rem; }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
-  <div class="eyebrow">Starter kit · links checked 25 Oct 2026</div>
+  <div class="eyebrow">Starter kit · links checked weekly</div>
   <h1>Cardano &amp; Midnight Starter Kit</h1>
-  <p class="lede">The skills, plugins, MCP servers and repos for building on Cardano and Midnight with Claude Code in VS Code, plus a step-by-step setup.</p>
-  <div class="legend">
-    <span><span class="chip ada">Cardano</span> Cardano</span>
-    <span><span class="chip mn">Midnight</span> Midnight</span>
-    <span><span class="chip off">Official</span> from the chain's own org</span>
-    <span><span class="chip warn">Caution</span> read the note first</span>
-  </div>
+  <p class="lede">A setup guide for Claude Code in VS Code, plus a searchable catalog of 360+ repos, tools and Midnight Improvement Proposals for Cardano and Midnight. Every entry is labelled with a category and a complexity level.</p>
 </header>
 
-<nav class="jump" aria-label="Sections">
-  <a href="#basics">Basics</a>
-  <a href="#setup">Setup guide</a>
-  <a href="#skills">Claude skills &amp; plugins</a>
-  <a href="#mcp">MCP servers</a>
-  <a href="#midnight-repos">Midnight repos</a>
-  <a href="#cardano-repos">Cardano repos</a>
-  <a href="#watch">Watch-outs</a>
+<nav class="bar" aria-label="Sections">
+  <div class="tabs">
+    <a href="#setup" data-view="setup">Setup guide</a>
+    <a href="#midnight" data-view="midnight">Midnight<span class="n" data-count="midnight"></span></a>
+    <a href="#cardano" data-view="cardano">Cardano<span class="n" data-count="cardano"></span></a>
+    <a href="#ai" data-view="ai">AI tools<span class="n" data-count="ai"></span></a>
+  </div>
+  <div class="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+    <input id="q" type="search" placeholder="Search repos, tools and MIPs" aria-label="Search the catalog" autocomplete="off">
+  </div>
 </nav>
 
+<main>
+<div id="view-setup">
 <section id="basics">
   <h2>Before you start</h2>
   <div class="facts">
@@ -196,7 +247,7 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
   </div>
 </section>
 
-<section id="setup">
+<section id="guide">
   <h2>Setup guide: Claude Code + VS Code</h2>
   <p>Written for a Windows machine. On macOS or Linux, skip step 1 and run everything in your normal terminal.</p>
 
@@ -328,178 +379,6 @@ npm install @meshsdk/core</pre></div>
   </ol>
 </section>
 
-<section id="skills">
-  <h2>Claude Code skills &amp; plugins</h2>
-
-  <div class="group-title"><h3>Midnight</h3><span class="chip mn">Midnight</span></div>
-  <div class="tablebox"><table>
-    <thead><tr><th>Name</th><th>What it gives you</th></tr></thead>
-    <tbody>
-      <tr><td><span class="name">midnight-expert marketplace</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/midnight-expert" target="_blank" rel="noopener">GitHub</a><a href="https://midnightntwrk.expert" target="_blank" rel="noopener">midnightntwrk.expert</a></div></td>
-        <td>The main Midnight toolkit, with 16 plugins:
-          <ul>
-            <li><b>compact-core</b>: Compact syntax, ledger, privacy and disclosure, tokens, review and security audit</li>
-            <li><b>compact-examples</b>: compilable example contracts</li>
-            <li><b>midnight-dapp-dev</b>: Vite + React DApp scaffold and wallet wiring</li>
-            <li><b>compact-cli-dev</b>: CLI scaffold for your contract</li>
-            <li><b>midnight-verify</b>: checks claims by compiling and running code</li>
-            <li><b>midnight-tooling</b>: Compact CLI, devnet, proof server, troubleshooting</li>
-            <li><b>midnight-wallet</b>, <b>midnight-cq</b>, <b>core-concepts</b>, <b>midnight-status-codes</b>, <b>proof-server</b>, <b>midnight-indexer</b>, <b>midnight-node</b>, <b>midnight-fact-check</b>, <b>midnight-plugin-utils</b>, and the <b>midnight-expert</b> meta-plugin</li>
-          </ul></td></tr>
-      <tr><td><span class="name">Edda Labs <code>midnight</code> plugin</span>
-        <div class="links"><a href="https://github.com/eddalabs/edda-marketplace" target="_blank" rel="noopener">edda-marketplace</a></div></td>
-        <td>Five skills from Edda Labs: Midnight docs and doc repos, contract patterns, examples, and a project starter.</td></tr>
-      <tr><td><span class="name">midnight-compact</span><span class="chips"><span class="chip warn">Caution</span></span>
-        <div class="links"><a href="https://github.com/ADAvault/midnight-skill" target="_blank" rel="noopener">ADAvault/midnight-skill</a></div></td>
-        <td>A single skill for writing and testing Compact contracts. One known error: it treats <code>sealed</code> fields as private. They are write-once, not private.</td></tr>
-      <tr><td><span class="name">midnight_agent_skills</span>
-        <div class="links"><a href="https://github.com/mzf11125/midnight_agent_skills" target="_blank" rel="noopener">mzf11125/midnight_agent_skills</a></div></td>
-        <td>Seven modular skills, including <code>midnight-api</code> (SDK packages and APIs), <code>midnight-concepts</code>, and <code>midnight-network</code> (node and indexer infrastructure).</td></tr>
-      <tr><td><span class="name">midnight-agent-skills</span>
-        <div class="links"><a href="https://github.com/UvRoxx/midnight-agent-skills" target="_blank" rel="noopener">UvRoxx/midnight-agent-skills</a></div></td>
-        <td>Skills for Compact syntax, SDK integration, deployment and testing, including <code>midnight-test-runner</code>.</td></tr>
-      <tr><td><span class="name">1AM Midnight skill</span>
-        <div class="links"><a href="https://github.com/webisoftSoftware/1AM-Midnight-Skill" target="_blank" rel="noopener">webisoftSoftware/1AM-Midnight-Skill</a></div></td>
-        <td>1AM wallet connection, ProofStation hosted proving, and DUST-sponsored transactions, so users don't pay fees.</td></tr>
-      <tr><td><span class="name">Midnight-Skills (MIDSKILLS)</span><span class="chips"><span class="chip warn">Caution</span></span>
-        <div class="links"><a href="https://github.com/Kali-Decoder/Midnight-Skills" target="_blank" rel="noopener">Kali-Decoder/Midnight-Skills</a></div></td>
-        <td>A community catalog of 15 skills, including <code>multinetwork</code> for running one codebase on local, Preview, Preprod and Mainnet. Read the files on GitHub instead of running its installer, which reports your GitHub identity to its analytics.</td></tr>
-      <tr><td><span class="name">create-effectstream-app</span><span class="chips"><span class="chip ada">Cardano</span></span>
-        <div class="links"><a href="https://github.com/effectstream/effectstream" target="_blank" rel="noopener">effectstream/effectstream</a></div></td>
-        <td>A multi-chain DApp engine (formerly Paima) covering Midnight, Cardano, EVM and more. It's a heavy stack (Postgres, sync node, batcher), so only use it when you need cross-chain.</td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="group-title"><h3>Cardano</h3><span class="chip ada">Cardano</span></div>
-  <div class="tablebox"><table>
-    <thead><tr><th>Name</th><th>What it gives you</th></tr></thead>
-    <tbody>
-      <tr><td><span class="name">cardano-agent-skills</span>
-        <div class="links"><a href="https://github.com/Flux-Point-Studios/cardano-agent-skills" target="_blank" rel="noopener">Flux-Point-Studios</a></div></td>
-        <td>Guidance skills are kept separate from "operator" skills, which only run commands when you invoke them.
-          <ul>
-            <li><b>cardano-cli-*</b>: wallets, transactions, Plutus script spends, staking, and a doctor that detects your CLI version</li>
-            <li><b>aiken-smart-contracts</b>, <b>plutus-v3-conway</b>, <b>meshjs-cardano</b>, <b>cardano-protocol-params</b></li>
-            <li><b>aiken-dex-security-audit</b> and <b>aiken-validator-redteam</b>: adversarial audits that write proof-of-concept tests</li>
-            <li><b>hydra-head</b> (+ troubleshooter), <b>cardano-devnet-in-a-box</b> (node + Hydra + Ogmios + Kupo)</li>
-            <li><b>koios-agent-wallet</b>, <b>cardano-mcp-*</b> (balances, $handle lookup, staking, signing)</li>
-          </ul></td></tr>
-      <tr><td><span class="name">cardano-dev-skills</span><span class="chips"><span class="chip off">Official</span><span class="chip warn">Caution</span></span>
-        <div class="links"><a href="https://github.com/cardano-foundation/cardano-dev-skills" target="_blank" rel="noopener">cardano-foundation</a></div></td>
-        <td>15 skills from the Cardano Foundation, including <code>cf-review-contract</code>, <code>cf-debug-transaction</code>, <code>cf-design-token</code> and <code>cf-optimize-validator</code>. The full plugin bundles a large set of third-party docs. Its own threat model lists prompt injection through those docs as a risk.</td></tr>
-      <tr><td><span class="name">skills CLI</span>
-        <div class="links"><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills</a><a href="https://skills.sh" target="_blank" rel="noopener">skills.sh</a></div></td>
-        <td>The <code>npx skills add owner/repo</code> installer used for the non-plugin skills above.</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section id="mcp">
-  <h2>MCP servers</h2>
-  <div class="tablebox"><table>
-    <thead><tr><th>Server</th><th>What it does</th></tr></thead>
-    <tbody>
-      <tr><td><span class="name">midnight-mcp</span><span class="chips"><span class="chip mn">Midnight</span></span>
-        <div class="links"><a href="https://github.com/Olanetsoft/midnight-mcp" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>Searches Midnight docs and repos, compiles and reviews Compact, and flags breaking changes between versions. No API key needed.</td></tr>
-      <tr><td><span class="name">ODATANO core-mcp</span><span class="chips"><span class="chip ada">Cardano</span></span>
-        <div class="links"><a href="https://www.npmjs.com/package/@odatano/core-mcp" target="_blank" rel="noopener">npm</a></div></td>
-        <td>Cardano reads, unsigned transaction builds, signing hand-off and submit through ODATANO. Needs an access key.</td></tr>
-      <tr><td><span class="name">ODATANO nightgate-mcp</span><span class="chips"><span class="chip mn">Midnight</span></span>
-        <div class="links"><a href="https://github.com/ODATANO/NIGHTGATE-MCP" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>The NIGHTGATE attestation layer: anchor and prove documents, selective disclosure, and swap offers. Needs an access key.</td></tr>
-      <tr><td><span class="name">Octocode</span>
-        <div class="links"><a href="https://github.com/bgauryy/octocode" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>Searches code across GitHub. Useful for checking how the official repos actually do something.</td></tr>
-      <tr><td><span class="name">cardano-mcp</span><span class="chips"><span class="chip ada">Cardano</span></span>
-        <div class="links"><a href="https://github.com/IndigoProtocol/cardano-mcp" target="_blank" rel="noopener">IndigoProtocol</a></div></td>
-        <td>Wallet operations for agents. Optional backend for the <code>cardano-mcp-*</code> skills. It holds keys, so use a test wallet.</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section id="midnight-repos">
-  <div class="group-title"><h2>Midnight repos &amp; docs</h2><span class="chip mn">Midnight</span></div>
-  <div class="tablebox"><table>
-    <thead><tr><th>Link</th><th>Why open it</th></tr></thead>
-    <tbody>
-      <tr><td><span class="name">Developer docs</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://docs.midnight.network/getting-started/installation" target="_blank" rel="noopener">Install</a><a href="https://docs.midnight.network/relnotes/support-matrix" target="_blank" rel="noopener">Support matrix</a><a href="https://github.com/midnightntwrk/midnight-docs" target="_blank" rel="noopener">Source</a></div></td>
-        <td>Start here. Check the support matrix every time you pin a version.</td></tr>
-      <tr><td><span class="name">create-mn-app</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/create-mn-app" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>Project scaffolder with templates for hello-world, battleship, bboard and leaderboard. Its local devnet comes pre-funded.</td></tr>
-      <tr><td><span class="name">midnight-examples</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/midnight-examples" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>The official learning path in one monorepo. Every example compiles and runs on one pinned toolchain.</td></tr>
-      <tr><td><span class="name">example-bboard</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/example-bboard" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>A bulletin board with contract, CLI and React UI. A good model for a full DApp.</td></tr>
-      <tr><td><span class="name">Compact</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/compact" target="_blank" rel="noopener">Releases</a><a href="https://github.com/LFDT-Minokawa/compact" target="_blank" rel="noopener">Compiler source</a><a href="https://github.com/midnightntwrk/setup-compact-action" target="_blank" rel="noopener">CI action</a></div></td>
-        <td>CLI releases, the compiler source (useful for settling syntax questions), and a GitHub Action for CI builds.</td></tr>
-      <tr><td><span class="name">SDKs</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/midnight-js" target="_blank" rel="noopener">midnight-js</a><a href="https://github.com/midnightntwrk/midnight-wallet" target="_blank" rel="noopener">wallet SDK</a><a href="https://github.com/midnightntwrk/midnight-dapp-connector-api" target="_blank" rel="noopener">DApp connector API</a></div></td>
-        <td>TypeScript SDK, wallet SDK, and the wallet-to-DApp API.</td></tr>
-      <tr><td><span class="name">OpenZeppelin Compact contracts</span>
-        <div class="links"><a href="https://github.com/OpenZeppelin/compact-contracts" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>Reusable Compact modules for access control, tokens, multisig, security and crypto utilities.</td></tr>
-      <tr><td><span class="name">Specs &amp; proposals</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/midnightntwrk/midnight-ledger" target="_blank" rel="noopener">ledger</a><a href="https://github.com/midnightntwrk/midnight-improvement-proposals" target="_blank" rel="noopener">MIPs</a></div></td>
-        <td>How transactions, tokens and DUST actually work, and what is changing next.</td></tr>
-      <tr><td><span class="name">Starter templates</span>
-        <div class="links"><a href="https://github.com/eddalabs/midnight-starter-template" target="_blank" rel="noopener">Edda Labs</a><a href="https://github.com/eddalabs/modular-starter" target="_blank" rel="noopener">modular-starter</a><a href="https://github.com/MeshJS/midnight-starter-template" target="_blank" rel="noopener">MeshJS</a></div></td>
-        <td>Community React monorepo starters. The MeshJS one was last updated in Feb 2026, so check its SDK versions.</td></tr>
-      <tr><td><span class="name">1AM tools</span>
-        <div class="links"><a href="https://1am.xyz" target="_blank" rel="noopener">Wallet</a><a href="https://build.1am.xyz" target="_blank" rel="noopener">AI Builder</a><a href="https://explorer.1am.xyz" target="_blank" rel="noopener">Explorer</a></div></td>
-        <td>Wallet, a browser-based contract builder, a block explorer, and ProofStation hosted proving.</td></tr>
-      <tr><td><span class="name">Discover &amp; ask</span>
-        <div class="links"><a href="https://github.com/midnightntwrk/midnight-awesome-dapps" target="_blank" rel="noopener">Awesome DApps</a><a href="https://awesomemidnight.com" target="_blank" rel="noopener">awesomemidnight.com</a><a href="https://forum.midnight.network" target="_blank" rel="noopener">Forum</a><a href="https://discord.gg/midnight" target="_blank" rel="noopener">Discord</a></div></td>
-        <td>See what others have built, and get help.</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section id="cardano-repos">
-  <div class="group-title"><h2>Cardano repos &amp; docs</h2><span class="chip ada">Cardano</span></div>
-  <div class="tablebox"><table>
-    <thead><tr><th>Link</th><th>Why open it</th></tr></thead>
-    <tbody>
-      <tr><td><span class="name">Developer Portal</span>
-        <div class="links"><a href="https://developers.cardano.org" target="_blank" rel="noopener">developers.cardano.org</a><a href="https://github.com/cardano-foundation/developer-portal" target="_blank" rel="noopener">Source</a></div></td>
-        <td>The starting point for Cardano, with guides for every tool below.</td></tr>
-      <tr><td><span class="name">Aiken</span>
-        <div class="links"><a href="https://aiken-lang.org" target="_blank" rel="noopener">aiken-lang.org</a><a href="https://github.com/aiken-lang/aiken" target="_blank" rel="noopener">compiler</a><a href="https://github.com/aiken-lang/stdlib" target="_blank" rel="noopener">stdlib</a></div></td>
-        <td>The contract language most new Cardano projects use. Do the tutorials on the site first.</td></tr>
-      <tr><td><span class="name">MeshJS</span>
-        <div class="links"><a href="https://meshjs.dev" target="_blank" rel="noopener">meshjs.dev</a><a href="https://github.com/MeshJS/mesh" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>TypeScript transaction building, wallet connectors and React components.</td></tr>
-      <tr><td><span class="name">Lucid Evolution</span>
-        <div class="links"><a href="https://github.com/Anastasia-Labs/lucid-evolution" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>An alternative off-chain TypeScript framework.</td></tr>
-      <tr><td><span class="name">Chain data &amp; APIs</span>
-        <div class="links"><a href="https://blockfrost.io" target="_blank" rel="noopener">Blockfrost</a><a href="https://github.com/blockfrost/blockfrost-js" target="_blank" rel="noopener">blockfrost-js</a><a href="https://koios.rest" target="_blank" rel="noopener">Koios</a><a href="https://ada-anvil.io" target="_blank" rel="noopener">Ada Anvil</a></div></td>
-        <td>Query the chain without running a node. Blockfrost needs a free project key. Koios is a community-run API. Ada Anvil offers hosted transaction building, minting and swaps.</td></tr>
-      <tr><td><span class="name">Node &amp; CLI</span><span class="chips"><span class="chip off">Official</span></span>
-        <div class="links"><a href="https://github.com/IntersectMBO/cardano-node" target="_blank" rel="noopener">cardano-node</a><a href="https://github.com/IntersectMBO/cardano-cli" target="_blank" rel="noopener">cardano-cli</a></div></td>
-        <td>Running a node and building transactions by hand. The cardano-cli skills cover this.</td></tr>
-      <tr><td><span class="name">Indexing &amp; local devnets</span>
-        <div class="links"><a href="https://github.com/CardanoSolutions/ogmios" target="_blank" rel="noopener">Ogmios</a><a href="https://github.com/CardanoSolutions/kupo" target="_blank" rel="noopener">Kupo</a><a href="https://github.com/bloxbean/yaci-devkit" target="_blank" rel="noopener">Yaci DevKit</a></div></td>
-        <td>A WebSocket bridge to the node, a lightweight chain index, and a one-command local devnet.</td></tr>
-      <tr><td><span class="name">Hydra</span>
-        <div class="links"><a href="https://hydra.family" target="_blank" rel="noopener">hydra.family</a><a href="https://github.com/cardano-scaling/hydra" target="_blank" rel="noopener">GitHub</a></div></td>
-        <td>Layer-2 state channels for fast, cheap off-chain transactions.</td></tr>
-      <tr><td><span class="name">Standards &amp; wallets</span>
-        <div class="links"><a href="https://github.com/cardano-foundation/CIPs" target="_blank" rel="noopener">CIPs</a><a href="https://github.com/Cardano-Forge/weld" target="_blank" rel="noopener">Weld</a></div></td>
-        <td>CIP-30 is the browser wallet API. Weld is a wallet connector built on it.</td></tr>
-      <tr><td><span class="name">Test ADA</span>
-        <div class="links"><a href="https://docs.cardano.org/cardano-testnets/tools/faucet" target="_blank" rel="noopener">Testnet faucet</a></div></td>
-        <td>Free Preprod and Preview ADA.</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
 <section id="watch">
   <h2>Watch-outs</h2>
   <ul class="watch">
@@ -508,42 +387,262 @@ npm install @meshsdk/core</pre></div>
     <li><strong>Pin compiler versions explicitly.</strong>Run <code>compact update &lt;v&gt;</code> before <code>compact compile +&lt;v&gt;</code>, and match the support matrix, not the newest release.</li>
     <li><strong>The cardano-dev-skills plugin bundles a lot of third-party documentation.</strong>Its own supply-chain notes list prompt injection through those docs as a risk. You can copy only the skills you need.</li>
     <li><strong>The MIDSKILLS installer reports your GitHub identity to its analytics.</strong>Read the skill files on GitHub instead.</li>
+    <li><strong>Community projects in the catalog are listed, not audited.</strong>Read the code before you run it, check when it was last updated, and never enter a real seed phrase into a demo.</li>
     <li><strong>MCP servers and operator skills that can sign must only use test wallets.</strong>Never give an agent a key that holds real funds.</li>
   </ul>
 </section>
+</div>
+
+<div id="view-catalog" hidden>
+  <section>
+    <div class="cat-head">
+      <h2 id="cat-title">Midnight</h2>
+      <p id="cat-intro"></p>
+      <div class="levels">
+        <div><span class="chip lvl-b">Beginner</span><span>Docs, starters, hosted tools</span></div>
+        <div><span class="chip lvl-i">Intermediate</span><span>SDKs, libraries, dev tools, demo apps</span></div>
+        <div><span class="chip lvl-a">Advanced</span><span>Protocol contracts, node and ledger internals, research</span></div>
+      </div>
+    </div>
+    <div id="starts-wrap" hidden>
+      <div class="kicker">Start here</div>
+      <div class="starts" id="starts"></div>
+    </div>
+    <div class="filters">
+      <div class="frow" id="f-level"><span class="lbl">Level</span></div>
+      <div class="frow" id="f-cat"><span class="lbl">Category</span></div>
+    </div>
+    <div class="status"><span id="count"></span><button type="button" id="clear" hidden>Clear filters</button></div>
+    <p class="disclaimer">Community projects are listed, not audited. Read the code before you run it, and never enter a real seed phrase into a demo.</p>
+    <div id="results"></div>
+  </section>
+</div>
+</main>
 
 <footer>
-  Every GitHub repo here was checked on 25 Oct 2026: it exists and isn't archived. The install commands come from each project's current README or docs. Version numbers change often, so check the linked source before you pin one.
+  Catalog data lives in <code>data/catalog.json</code>. Stars, last-updated dates and archived status refresh weekly from GitHub, and every link is checked weekly.
   Source and fixes: <a href="https://github.com/MJ-Jinx/cardano-midnight-starter-kit" target="_blank" rel="noopener">github.com/MJ-Jinx/cardano-midnight-starter-kit</a>. Open an issue or pull request if something is out of date.
 </footer>
 </div>
 
 <script>
 (function () {
+  // Copy buttons for the setup guide's code blocks
   document.querySelectorAll('.code').forEach(function (box) {
     var pre = box.querySelector('pre');
     var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'copy';
-    btn.textContent = 'Copy';
+    btn.type = 'button'; btn.className = 'copy'; btn.textContent = 'Copy';
     btn.setAttribute('aria-label', 'Copy command');
     btn.addEventListener('click', function () {
       var text = pre.innerText.replace(/\s+#[^\n]*$/gm, '').trim();
-      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1400); };
+      var reset = function () { setTimeout(function () { btn.textContent = 'Copy'; }, 1400); };
       var fallback = function () {
         var r = document.createRange(); r.selectNodeContents(pre);
         var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-        btn.textContent = 'Selected';
-        setTimeout(function () { btn.textContent = 'Copy'; }, 1400);
+        btn.textContent = 'Selected'; reset();
       };
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done, fallback);
+          navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; reset(); }, fallback);
         } else { fallback(); }
       } catch (e) { fallback(); }
     });
     box.appendChild(btn);
   });
+
+  var VIEWS = ['setup', 'midnight', 'cardano', 'ai'];
+  var INTRO = {
+    midnight: 'Official repos, community tools and DApps, plus every Midnight Improvement Proposal (MIP).',
+    cardano: 'Languages, SDKs, chain APIs, infrastructure, DeFi protocols, oracles and research.',
+    ai: 'Claude Code plugins, agent skills and MCP servers for both chains.'
+  };
+  var LVL = { Beginner: 'b', Intermediate: 'i', Advanced: 'a' };
+  var CHAIN = { midnight: 'Midnight', cardano: 'Cardano', both: 'Cardano + Midnight' };
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var state = { view: 'setup', cat: 'all', level: 'all', q: '' };
+  var data = null;
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function stars(n) { if (n == null) return null; return n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'k' : String(n); }
+  function month(s) { if (!s) return null; var p = s.split('-'); return MONTHS[+p[1] - 1] + ' ' + p[0]; }
+  function inTab(it, tab) { return it.tab === tab || it.also === tab; }
+  function catOf(it, tab) { return it.tab === tab ? it.category : it.alsoCategory; }
+  function terms() { return state.q.toLowerCase().split(/\s+/).filter(Boolean); }
+  function hay(it) {
+    return (it._h = it._h || [it.name, it.owner, it.repo, it.desc, it.category, it.alsoCategory, it.level, CHAIN[it.chain], (it.tags || []).join(' '), it.official ? 'official' : '', it.archived ? 'archived' : ''].join(' ').toLowerCase());
+  }
+  function matchQ(it, t) { var h = hay(it); for (var i = 0; i < t.length; i++) if (h.indexOf(t[i]) < 0) return false; return true; }
+  function cmp(a, b) {
+    return ((b.start ? 1 : 0) - (a.start ? 1 : 0)) || ((a.name.indexOf('MIP-') === 0) - (b.name.indexOf('MIP-') === 0)) || ((b.stars || 0) - (a.stars || 0)) || a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+  }
+  function chip(text, cls) { return el('span', 'chip ' + cls, text); }
+
+  function renderItem(it, opts) {
+    var row = el('article', 'item');
+    var head = el('div', 'item-head');
+    var a = el('a', 'item-name', it.name); a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+    head.appendChild(a);
+    if (it.owner && it.name.toLowerCase() !== (it.repo || '').toLowerCase()) head.appendChild(el('span', 'owner', it.repo || it.owner));
+    row.appendChild(head);
+    row.appendChild(el('p', 'item-desc', it.desc));
+    var meta = el('div', 'item-meta');
+    meta.appendChild(chip(it.level, 'lvl-' + LVL[it.level]));
+    if (opts.showCat) meta.appendChild(chip(opts.tab ? catOf(it, opts.tab) : it.category, 'off'));
+    if (opts.showChain && it.chain) meta.appendChild(chip(CHAIN[it.chain], it.chain === 'cardano' ? 'ada' : (it.chain === 'midnight' ? 'mn' : 'off')));
+    if (!opts.showChain && it.chain === 'both') meta.appendChild(chip(CHAIN.both, 'off'));
+    if (it.official) meta.appendChild(chip('Official', 'off'));
+    (it.tags || []).forEach(function (t) { if (t && t !== 'MIP') meta.appendChild(chip(t, 'off')); });
+    if (it.archived) meta.appendChild(chip('Archived', 'arch'));
+    var st = [];
+    if (it.stars != null) st.push('★ ' + stars(it.stars));
+    if (it.updated) st.push('updated ' + month(it.updated));
+    if (st.length) meta.appendChild(el('span', 'stats', st.join(' · ')));
+    if (it.links && it.links.length) {
+      var xl = el('span', 'xlinks');
+      it.links.forEach(function (l) { var x = el('a', null, l.label); x.href = l.url; x.target = '_blank'; x.rel = 'noopener'; xl.appendChild(x); });
+      meta.appendChild(xl);
+    }
+    row.appendChild(meta);
+    if (it.note) row.appendChild(el('p', 'item-note', it.note));
+    return row;
+  }
+
+  function fbtn(label, count, pressed, onClick) {
+    var b = el('button', 'fbtn', label); b.type = 'button';
+    b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    if (count != null) b.appendChild(el('span', 'k', String(count)));
+    b.addEventListener('click', onClick);
+    return b;
+  }
+  function resetRow(id) { var r = document.getElementById(id); while (r.children.length > 1) r.removeChild(r.lastChild); return r; }
+
+  function render() {
+    var searching = state.q.trim() !== '';
+    var setupView = state.view === 'setup' && !searching;
+    document.getElementById('view-setup').hidden = !setupView;
+    document.getElementById('view-catalog').hidden = setupView;
+    document.querySelectorAll('.tabs a').forEach(function (a) {
+      if (a.dataset.view === state.view && !searching) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    if (setupView) return;
+    var results = document.getElementById('results');
+    results.textContent = '';
+    if (!data) { results.appendChild(el('p', 'empty', 'Loading the catalog…')); return; }
+
+    var t = terms();
+    var tab = searching ? null : state.view;
+    var pool = data.items.filter(function (it) { return !it.unavailable && (searching || inTab(it, tab)) && matchQ(it, t); });
+    var byLevel = pool.filter(function (it) { return state.level === 'all' || it.level === state.level; });
+    var cats = searching ? null : data.tabs[tab].categories;
+    var shown = byLevel.filter(function (it) { return searching || state.cat === 'all' || catOf(it, tab) === state.cat; });
+
+    document.getElementById('cat-title').textContent = searching ? 'Search results' : data.tabs[tab].label;
+    document.getElementById('cat-intro').textContent = searching ? 'Matching “' + state.q.trim() + '” across Midnight, Cardano and AI tools.' : INTRO[tab];
+
+    // Start-here cards
+    var sw = document.getElementById('starts-wrap'), sg = document.getElementById('starts');
+    sg.textContent = '';
+    var starts = (!searching && state.cat === 'all' && state.level === 'all') ? data.items.filter(function (it) { return it.start && it.tab === tab; }).sort(function (x, y) { return x.start - y.start; }) : [];
+    sw.hidden = !starts.length;
+    starts.forEach(function (it) {
+      var c = el('div', 'start');
+      var a = el('a', null, it.name); a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      c.appendChild(a); c.appendChild(el('p', null, it.desc));
+      var m = el('div', 'chips'); m.appendChild(chip(it.level, 'lvl-' + LVL[it.level])); c.appendChild(m);
+      sg.appendChild(c);
+    });
+
+    // Level filter
+    var lr = resetRow('f-level');
+    lr.appendChild(fbtn('All', pool.length, state.level === 'all', function () { state.level = 'all'; render(); }));
+    data.levels.forEach(function (l) {
+      var n = pool.filter(function (it) { return it.level === l; }).length;
+      if (n || state.level === l) lr.appendChild(fbtn(l, n, state.level === l, function () { state.level = l; render(); }));
+    });
+    // Category filter (tab views only)
+    var cr = resetRow('f-cat');
+    document.getElementById('f-cat').hidden = searching;
+    if (!searching) {
+      cr.appendChild(fbtn('All', byLevel.length, state.cat === 'all', function () { state.cat = 'all'; render(); }));
+      cats.forEach(function (c) {
+        var n = byLevel.filter(function (it) { return catOf(it, tab) === c; }).length;
+        if (n || state.cat === c) cr.appendChild(fbtn(c, n, state.cat === c, function () { state.cat = c; render(); }));
+      });
+    }
+
+    var total = searching ? data.items.length : data.items.filter(function (it) { return inTab(it, tab); }).length;
+    document.getElementById('count').textContent = 'Showing ' + shown.length + ' of ' + total;
+    document.getElementById('clear').hidden = !(state.cat !== 'all' || state.level !== 'all' || searching);
+
+    if (!shown.length) {
+      var e = el('p', 'empty', 'Nothing matches. Try a shorter search or clear the filters.');
+      results.appendChild(e); return;
+    }
+    if (searching) {
+      var q = t.join(' ');
+      shown.sort(function (a, b) {
+        var an = a.name.toLowerCase().indexOf(q) >= 0, bn = b.name.toLowerCase().indexOf(q) >= 0;
+        return (bn - an) || cmp(a, b);
+      });
+      var g = el('div', 'group');
+      shown.forEach(function (it) { g.appendChild(renderItem(it, { showCat: true, showChain: true })); });
+      results.appendChild(g);
+      return;
+    }
+    cats.forEach(function (c) {
+      var list = shown.filter(function (it) { return catOf(it, tab) === c; }).sort(cmp);
+      if (!list.length) return;
+      var g = el('div', 'group');
+      var h = el('h3', null, c); h.appendChild(el('span', 'k', String(list.length)));
+      g.appendChild(h);
+      list.forEach(function (it) { g.appendChild(renderItem(it, { showCat: false, showChain: tab === 'ai', tab: tab })); });
+      results.appendChild(g);
+    });
+  }
+
+  function route() {
+    var h = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (VIEWS.indexOf(h) >= 0) {
+      if (state.view !== h) { state.cat = 'all'; }
+      state.view = h;
+    } else if (h && document.getElementById(h) && document.getElementById('view-setup').contains(document.getElementById(h))) {
+      state.view = 'setup';
+    } else if (!h) {
+      state.view = 'setup';
+    }
+    render();
+    if (h && VIEWS.indexOf(h) < 0) { var t = document.getElementById(h); if (t) t.scrollIntoView(); }
+  }
+
+  var q = document.getElementById('q');
+  q.addEventListener('input', function () { state.q = q.value; render(); });
+  document.getElementById('clear').addEventListener('click', function () { state.cat = 'all'; state.level = 'all'; state.q = ''; q.value = ''; render(); });
+  document.querySelectorAll('.tabs a').forEach(function (a) {
+    a.addEventListener('click', function () { if (state.q) { state.q = ''; q.value = ''; if (location.hash === '#' + a.dataset.view) render(); } });
+  });
+  window.addEventListener('hashchange', function () {
+    route();
+    var bar = document.querySelector('.bar');
+    if (VIEWS.indexOf(location.hash.slice(1)) >= 0 && window.scrollY > bar.offsetTop) window.scrollTo(0, bar.offsetTop);
+  });
+
+  try { var sq = new URLSearchParams(location.search).get('q'); if (sq) { state.q = sq; q.value = sq; } } catch (e) {}
+  route();
+  fetch('data/catalog.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      data = d;
+      ['midnight', 'cardano', 'ai'].forEach(function (t) {
+        var n = d.items.filter(function (it) { return !it.unavailable && inTab(it, t); }).length;
+        var s = document.querySelector('[data-count="' + t + '"]'); if (s) s.textContent = n;
+      });
+      render();
+    })
+    .catch(function () {
+      data = null;
+      var r = document.getElementById('results'); r.textContent = '';
+      r.appendChild(el('p', 'empty', 'The catalog could not be loaded. Reload the page, or open data/catalog.json on GitHub.'));
+    });
 })();
 </script>
 </body>
