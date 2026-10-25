@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Starter Kit Banner</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=block">
+<style>
+/* Split frame: light public side (Cardano) beside a dark private side (Midnight). Same tokens as the site. */
+:root {
+  --light: #f4f6f9;
+  --ink: #151922;
+  --muted: #586074;
+  --line: #dce1e9;
+  --cardano: #0033ad;
+  --night: #0e1015;
+  --night-fg: #e6e9ef;
+  --night-muted: #7d869a;
+  --night-line: #2a303c;
+  --night-accent: #86abff;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+}
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: var(--light); }
+.frame { display: grid; grid-template-columns: 680px 520px; width: 1200px; height: 630px; }
+
+.left {
+  background: var(--light); color: var(--ink);
+  padding: 60px 48px 54px 72px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.top { display: flex; align-items: center; gap: 16px; }
+.eyebrow { font: 600 15px/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; gap: 8px; }
+.chip { font: 600 13px/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 10px; border-radius: 5px; border: 1.5px solid transparent; }
+.chip.ada { color: var(--cardano); border-color: var(--cardano); }
+.chip.mn { background: var(--ink); color: var(--light); border-color: var(--ink); }
+
+h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 800;
+  font-size: 86px; line-height: 0.98; letter-spacing: -0.02em;
+}
+h1 .amp { color: var(--cardano); font-weight: 700; }
+.sub { margin: 22px 0 0; font: 400 26px/1.32 var(--font-body); color: var(--muted); max-width: 540px; }
+.url { font: 600 17px/1 var(--font-mono); color: var(--ink); padding-top: 18px; border-top: 1.5px solid var(--line); }
+
+.right {
+  background: var(--night); color: var(--night-fg);
+  padding: 60px 52px 54px 56px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.label { font: 600 13px/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--night-muted); }
+.term { font: 400 19px/1.75 var(--font-mono); margin: 0; white-space: pre; }
+.term .c { color: var(--night-muted); }
+.term .p { color: var(--night-accent); }
+.foot { font: 600 13px/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--night-muted); padding-top: 18px; border-top: 1.5px solid var(--night-line); }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="left">
+    <div class="top">
+      <span class="eyebrow">Starter kit</span>
+      <span class="chips"><span class="chip ada">Cardano</span><span class="chip mn">Midnight</span></span>
+    </div>
+    <div>
+      <h1>Cardano <span class="amp">&amp;</span><br>Midnight<br>Starter Kit</h1>
+      <p class="sub">Skills, plugins, MCP servers and repos, plus a setup guide for Claude Code in VS Code.</p>
+    </div>
+    <div class="url">mj-jinx.github.io/cardano-midnight-starter-kit</div>
+  </div>
+  <div class="right">
+    <div class="label">From install to first build</div>
+<pre class="term"><span class="c"># Midnight</span>
+<span class="p">$</span> npx create-mn-app@latest my-app
+<span class="p">$</span> compact update 0.31.1
+<span class="p">$</span> npm run setup
+
+<span class="c"># Cardano</span>
+<span class="p">$</span> aikup
+<span class="p">$</span> aiken new my-org/hello
+<span class="p">$</span> aiken build</pre>
+    <div class="foot">Links checked weekly</div>
+  </div>
+</div>
+</body>
+</html>

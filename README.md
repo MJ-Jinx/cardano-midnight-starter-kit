@@ -1,3 +1,5 @@
+[![Cardano & Midnight Starter Kit](og-image.png)](https://mj-jinx.github.io/cardano-midnight-starter-kit/)
+
 # Cardano & Midnight Starter Kit
 
 Skills, plugins, MCP servers and repos for building on Cardano and Midnight, plus a step-by-step setup guide for Claude Code in VS Code.
@@ -15,6 +17,14 @@ Skills, plugins, MCP servers and repos for building on Cardano and Midnight, plu
 ## Updating
 
 The whole site is one file, `index.html`. Edit it on GitHub with the pencil icon or locally, then commit to `main`. GitHub Pages republishes in a minute or two.
+
+The banner (`og-image.png`) is the preview image shown when the link is shared. Its source is `assets/banner-source.html`. To change it, edit that file and take a 1200×630 screenshot, for example with headless Edge or Chrome:
+
+```bash
+msedge --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=8000 --screenshot=og-image.png file:///full/path/to/assets/banner-source.html
+```
+
+Social sites cache previews, so a changed banner can take a while to show up where the link was already shared.
 
 ## Link checks
 
