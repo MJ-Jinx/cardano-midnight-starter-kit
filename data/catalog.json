@@ -74,7 +74,7 @@
      "url": "https://midnightntwrk.expert"
     }
    ],
-   "stars": 46,
+   "stars": 47,
    "updated": "2026-10",
    "archived": false
   },
@@ -95,7 +95,7 @@
    "note": "Bundles a large set of third-party docs, which its own threat model flags as a prompt-injection risk. You can copy only the skills you need.",
    "tags": [],
    "links": [],
-   "stars": 37,
+   "stars": 38,
    "updated": "2026-10",
    "archived": false
   },
@@ -163,7 +163,7 @@
      "url": "https://skills.sh"
     }
    ],
-   "stars": 36440,
+   "stars": 37483,
    "updated": "2026-10",
    "archived": false
   },
@@ -184,7 +184,7 @@
    "note": "Its installer reports your GitHub identity to its analytics. Read the skill files on GitHub instead.",
    "tags": [],
    "links": [],
-   "stars": 16,
+   "stars": 18,
    "updated": "2026-10",
    "archived": false
   },
@@ -268,7 +268,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 5,
+   "stars": 6,
    "updated": "2026-06",
    "archived": false
   },
@@ -373,7 +373,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 955,
+   "stars": 956,
    "updated": "2026-10",
    "archived": false
   },
@@ -395,7 +395,7 @@
    "tags": [],
    "links": [],
    "stars": 4,
-   "updated": "2026-04",
+   "updated": "2026-10",
    "archived": false
   },
   {
@@ -613,7 +613,7 @@
      "url": "https://aiken-lang.org/installation-instructions"
     }
    ],
-   "stars": 588,
+   "stars": 587,
    "updated": "2026-10",
    "archived": false
   },
@@ -698,7 +698,7 @@
    "tags": [],
    "links": [],
    "stars": 8,
-   "updated": "2026-09",
+   "updated": "2026-10",
    "archived": false
   },
   {
@@ -870,7 +870,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 238,
+   "stars": 237,
    "updated": "2026-10",
    "archived": false
   },
@@ -955,7 +955,7 @@
    "tags": [],
    "links": [],
    "stars": 80,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1081,7 +1081,7 @@
    "tags": [],
    "links": [],
    "stars": 2,
-   "updated": "2026-08",
+   "updated": "2026-10",
    "archived": false
   },
   {
@@ -1248,7 +1248,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 318,
+   "stars": 319,
    "updated": "2026-10",
    "archived": false
   },
@@ -1291,7 +1291,7 @@
    "tags": [],
    "links": [],
    "stars": 138,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1628,7 +1628,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "unavailable": true
   },
   {
    "name": "Koios",
@@ -1668,8 +1669,8 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 3175,
-   "updated": "2026-10",
+   "stars": 3173,
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1710,7 +1711,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 296,
+   "stars": 297,
    "updated": "2026-10",
    "archived": false
   },
@@ -1731,7 +1732,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 295,
+   "stars": 297,
    "updated": "2026-10",
    "archived": false
   },
@@ -1941,7 +1942,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 54,
+   "stars": 53,
    "updated": "2026-02",
    "archived": false
   },
@@ -2341,7 +2342,7 @@
    "tags": [],
    "links": [],
    "stars": 16,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -2361,7 +2362,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 14,
+   "stars": 15,
    "updated": "2026-10",
    "archived": false
   },
@@ -2866,7 +2867,7 @@
    "tags": [],
    "links": [],
    "stars": 4,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3412,7 +3413,7 @@
    "tags": [],
    "links": [],
    "stars": 25,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3568,7 +3569,7 @@
    "tags": [],
    "links": [],
    "stars": 48,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3611,7 +3612,7 @@
    "links": [],
    "stars": 5,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-faucet-api",
@@ -3631,7 +3632,7 @@
    "tags": [],
    "links": [],
    "stars": 1,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3746,7 +3747,7 @@
    "tags": [],
    "links": [],
    "stars": 4,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3810,7 +3811,7 @@
    "links": [],
    "stars": 21,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-starter-template",
@@ -3873,7 +3874,7 @@
    "links": [],
    "stars": 7,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "example-hello-world",
@@ -3893,7 +3894,7 @@
    "tags": [],
    "links": [],
    "stars": 5,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3957,7 +3958,7 @@
    "links": [],
    "stars": 3,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-leaderboard",
@@ -4020,7 +4021,7 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "hello-world-compact",
@@ -4083,7 +4084,7 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "example-shielded-chips",
@@ -4104,7 +4105,7 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-tip-jar",
@@ -4124,7 +4125,7 @@
    "tags": [],
    "links": [],
    "stars": 1,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4531,7 +4532,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 19,
+   "stars": 20,
    "updated": "2026-10",
    "archived": false
   },
@@ -4615,8 +4616,8 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 8,
-   "updated": "2026-10",
+   "stars": 9,
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4638,7 +4639,7 @@
    "links": [],
    "stars": 4,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-cnight-to-dust-dapp",
@@ -4792,8 +4793,8 @@
    "note": "Research code.",
    "tags": [],
    "links": [],
-   "stars": 47,
-   "updated": "2026-10",
+   "stars": 49,
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4814,7 +4815,7 @@
    "tags": [],
    "links": [],
    "stars": 39,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4877,7 +4878,7 @@
    "tags": [],
    "links": [],
    "stars": 28,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4899,7 +4900,7 @@
    "links": [],
    "stars": 13,
    "updated": "2026-10",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-playground",
@@ -5024,7 +5025,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -5107,7 +5108,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 4,
+   "stars": 5,
    "updated": "2026-10",
    "archived": false
   },
@@ -5427,7 +5428,7 @@
      "url": "https://midnightntwrk.github.io/midnight-improvement-proposals/"
     }
    ],
-   "stars": 21,
+   "stars": 22,
    "updated": "2026-10",
    "archived": false
   },
@@ -6319,7 +6320,7 @@
    "tags": [],
    "links": [],
    "stars": 1,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -6403,7 +6404,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-09",
+   "updated": "2026-10",
    "archived": false
   },
   {
@@ -7034,7 +7035,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "unavailable": true
   },
   {
    "name": "Midnight Identity",
@@ -7579,7 +7581,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -7915,7 +7917,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -8020,7 +8022,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
