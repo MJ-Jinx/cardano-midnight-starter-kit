@@ -194,11 +194,13 @@ ul.watch li strong { display: block; }
 .legend dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 12px; align-items: baseline; }
 .legend dt, .legend dd { margin: 0; }
 .legend dd { font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
-.filters { display: grid; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 14px 16px; }
+/* Filter panel: a two-column grid (labels | buttons) so every button group starts at the same x */
+.filters { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 16px; align-items: start; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 14px 16px; }
 .filters .fbtn { background: var(--bg); }
 .filters .fbtn[aria-pressed="true"] { background: var(--fg); }
-.frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.frow .lbl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.frow { display: contents; }
+.frow .lbl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); line-height: 30px; }
+.frow .opts { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
 .fbtn {
   font: inherit; font-size: 0.86rem; color: var(--fg); background: var(--surface); cursor: pointer;
   border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; white-space: nowrap;
@@ -493,10 +495,10 @@ npm install @meshsdk/core</pre></div>
       <div class="starts" id="starts"></div>
     </div>
     <div class="filters">
-      <div class="frow" id="f-src"><span class="lbl">Source</span></div>
-      <div class="frow" id="f-level"><span class="lbl">Level</span></div>
-      <div class="frow" id="f-cat"><span class="lbl">Category</span></div>
-      <div class="frow" id="f-sort"><span class="lbl">Sort</span></div>
+      <div class="frow" id="f-src"><span class="lbl">Source</span><div class="opts"></div></div>
+      <div class="frow" id="f-level"><span class="lbl">Level</span><div class="opts"></div></div>
+      <div class="frow" id="f-cat"><span class="lbl">Category</span><div class="opts"></div></div>
+      <div class="frow" id="f-sort"><span class="lbl">Sort</span><div class="opts"></div></div>
     </div>
     <div class="status"><span id="count"></span><button type="button" id="clear" hidden>Clear filters</button></div>
     <p class="disclaimer">Check every repo before you use it, Official ones included. Community projects are listed, not audited. Never enter a real seed phrase into a demo.</p>
@@ -609,7 +611,7 @@ npm install @meshsdk/core</pre></div>
     b.addEventListener('click', onClick);
     return b;
   }
-  function resetRow(id) { var r = document.getElementById(id); while (r.children.length > 1) r.removeChild(r.lastChild); return r; }
+  function resetRow(id) { var r = document.querySelector('#' + id + ' .opts'); r.textContent = ''; return r; }
 
   function render() {
     var searching = state.q.trim() !== '';
@@ -671,7 +673,7 @@ npm install @meshsdk/core</pre></div>
     // Category filter (Section on All tools; hidden while searching)
     var cr = resetRow('f-cat');
     document.getElementById('f-cat').hidden = searching;
-    cr.firstElementChild.textContent = allView ? 'Section' : 'Category';
+    document.querySelector('#f-cat .lbl').textContent = allView ? 'Section' : 'Category';
     if (!searching) {
       cr.appendChild(fbtn('All', byLevel.length, state.cat === 'all', function () { state.cat = 'all'; render(); }));
       cats.forEach(function (c) {
