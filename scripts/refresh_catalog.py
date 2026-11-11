@@ -1,9 +1,9 @@
-"""Refresh GitHub metadata in data/catalog.json: stars, last push month and archived status.
+"""Refresh GitHub metadata in data/catalog.json: stars, last push date and archived status.
 
 A repo that is gone or no longer public is marked "unavailable" and hidden on the site.
 Usage: GITHUB_TOKEN=... python scripts/refresh_catalog.py
 """
-import json, os, sys, urllib.error, urllib.request
+import datetime, json, os, sys, urllib.error, urllib.request
 from pathlib import Path
 
 PATH = Path(__file__).resolve().parent.parent / "data" / "catalog.json"
@@ -36,7 +36,8 @@ def main():
                 gone.append(it["repo"])
                 changed += 1
             continue
-        new = {"stars": r["stargazers_count"], "updated": (r.get("pushed_at") or "")[:7] or None, "archived": bool(r.get("archived"))}
+        pushed = (r.get("pushed_at") or "")[:10] or None
+        new = {"stars": r["stargazers_count"], "updated": pushed[:7] if pushed else None, "pushed": pushed, "archived": bool(r.get("archived"))}
         if it.pop("unavailable", None):
             changed += 1
         for k, v in new.items():
@@ -44,6 +45,7 @@ def main():
                 it[k] = v
                 changed += 1
     if changed:
+        data["generated"] = datetime.date.today().isoformat()
         PATH.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     print(f"fields changed: {changed}")
     if gone:

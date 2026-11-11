@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25",
+ "generated": "2026-11-11",
  "tabs": {
   "midnight": {
    "label": "Midnight",
@@ -76,7 +76,8 @@
    ],
    "stars": 47,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "cardano-dev-skills",
@@ -97,7 +98,8 @@
    "links": [],
    "stars": 38,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "edda-marketplace",
@@ -118,7 +120,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-18"
   },
   {
    "name": "cardano-agent-skills",
@@ -139,7 +142,8 @@
    "links": [],
    "stars": 8,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-08"
   },
   {
    "name": "skills",
@@ -163,9 +167,10 @@
      "url": "https://skills.sh"
     }
    ],
-   "stars": 38888,
+   "stars": 38890,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "taste-skill",
@@ -197,9 +202,10 @@
      "url": "https://tasteskill.dev"
     }
    ],
-   "stars": 113030,
+   "stars": 113039,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-08"
   },
   {
    "name": "Midnight-Skills",
@@ -220,7 +226,8 @@
    "links": [],
    "stars": 18,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-27"
   },
   {
    "name": "midnight-skill",
@@ -241,7 +248,8 @@
    "links": [],
    "stars": 10,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-23"
   },
   {
    "name": "midnight-agent-skills",
@@ -262,7 +270,8 @@
    "links": [],
    "stars": 9,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-29"
   },
   {
    "name": "EchoMKB",
@@ -283,7 +292,8 @@
    "links": [],
    "stars": 7,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-23"
   },
   {
    "name": "midnight_agent_skills",
@@ -304,7 +314,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-26"
   },
   {
    "name": "1AM-Midnight-Skill",
@@ -325,7 +336,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-23"
   },
   {
    "name": "strike-finance-hermes-skill",
@@ -346,7 +358,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-20"
   },
   {
    "name": "strike-finance-skills",
@@ -367,7 +380,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-20"
   },
   {
    "name": "midnight-mcp",
@@ -388,7 +402,8 @@
    "links": [],
    "stars": 37,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-02"
   },
   {
    "name": "octocode",
@@ -409,7 +424,8 @@
    "links": [],
    "stars": 959,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-06"
   },
   {
    "name": "cardano-mcp",
@@ -430,7 +446,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-27"
   },
   {
    "name": "NIGHTGATE-MCP",
@@ -451,7 +468,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "ODATANO-CORE-MCP",
@@ -472,7 +490,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "Cardano Developer Portal",
@@ -535,7 +554,8 @@
    "links": [],
    "stars": 444,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "docs-cardano-org",
@@ -556,7 +576,8 @@
    "links": [],
    "stars": 98,
    "updated": "2021-06",
-   "archived": true
+   "archived": true,
+   "pushed": "2021-06-22"
   },
   {
    "name": "plutus-use-cases",
@@ -577,7 +598,8 @@
    "links": [],
    "stars": 64,
    "updated": "2022-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2022-08-10"
   },
   {
    "name": "courses",
@@ -598,7 +620,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-11-24"
   },
   {
    "name": "Hydra docs",
@@ -649,7 +672,8 @@
    ],
    "stars": 589,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "plutus",
@@ -670,7 +694,8 @@
    "links": [],
    "stars": 1633,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "tx3",
@@ -691,7 +716,8 @@
    "links": [],
    "stars": 69,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-28"
   },
   {
    "name": "stdlib",
@@ -712,7 +738,8 @@
    "links": [],
    "stars": 58,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-26"
   },
   {
    "name": "uplc",
@@ -733,7 +760,8 @@
    "links": [],
    "stars": 8,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "uplc-turbo",
@@ -754,7 +782,8 @@
    "links": [],
    "stars": 7,
    "updated": "2025-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-11-18"
   },
   {
    "name": "marlowe-plutus",
@@ -775,7 +804,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-06"
   },
   {
    "name": "aikup",
@@ -796,7 +826,8 @@
    "links": [],
    "stars": 4,
    "updated": "2024-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-10-02"
   },
   {
    "name": "aiken-stdlib",
@@ -817,7 +848,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-03-28"
   },
   {
    "name": "mesh",
@@ -843,7 +875,8 @@
    ],
    "stars": 273,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "pycardano",
@@ -864,7 +897,8 @@
    "links": [],
    "stars": 252,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-26"
   },
   {
    "name": "cardano-serialization-lib",
@@ -885,7 +919,8 @@
    "links": [],
    "stars": 248,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-25"
   },
   {
    "name": "cardano-js-sdk",
@@ -906,7 +941,8 @@
    "links": [],
    "stars": 237,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-14"
   },
   {
    "name": "pallas",
@@ -927,7 +963,8 @@
    "links": [],
    "stars": 204,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "cardano-multiplatform-lib",
@@ -948,7 +985,8 @@
    "links": [],
    "stars": 105,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-30"
   },
   {
    "name": "lucid-evolution",
@@ -969,7 +1007,8 @@
    "links": [],
    "stars": 90,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-04"
   },
   {
    "name": "gouroboros",
@@ -990,7 +1029,8 @@
    "links": [],
    "stars": 80,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "blaze-cardano",
@@ -1011,7 +1051,8 @@
    "links": [],
    "stars": 64,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "balius",
@@ -1032,7 +1073,8 @@
    "links": [],
    "stars": 35,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "message-signing",
@@ -1053,7 +1095,8 @@
    "links": [],
    "stars": 30,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-13"
   },
   {
    "name": "cab",
@@ -1074,7 +1117,8 @@
    "links": [],
    "stars": 6,
    "updated": "2025-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-02-14"
   },
   {
    "name": "x402",
@@ -1095,7 +1139,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-06"
   },
   {
    "name": "cbor",
@@ -1116,7 +1161,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-29"
   },
   {
    "name": "zeroj",
@@ -1137,7 +1183,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-30"
   },
   {
    "name": "go-cardano-fees",
@@ -1158,7 +1205,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-27"
   },
   {
    "name": "plutus-data",
@@ -1179,7 +1227,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "lace",
@@ -1200,7 +1249,8 @@
    "links": [],
    "stars": 55,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-07"
   },
   {
    "name": "weld",
@@ -1221,7 +1271,8 @@
    "links": [],
    "stars": 31,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-19"
   },
   {
    "name": "Blockfrost",
@@ -1263,7 +1314,8 @@
    "links": [],
    "stars": 329,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-13"
   },
   {
    "name": "cardano-db-sync",
@@ -1284,7 +1336,8 @@
    "links": [],
    "stars": 319,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-06"
   },
   {
    "name": "oura",
@@ -1305,7 +1358,8 @@
    "links": [],
    "stars": 286,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "dolos",
@@ -1326,7 +1380,8 @@
    "links": [],
    "stars": 139,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "kupo",
@@ -1347,7 +1402,8 @@
    "links": [],
    "stars": 138,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "blockfrost-js",
@@ -1368,7 +1424,8 @@
    "links": [],
    "stars": 108,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-15"
   },
   {
    "name": "scrolls",
@@ -1389,7 +1446,8 @@
    "links": [],
    "stars": 104,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "blockfrost-backend-ryo",
@@ -1410,7 +1468,8 @@
    "links": [],
    "stars": 84,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "blockfrost-python",
@@ -1431,7 +1490,8 @@
    "links": [],
    "stars": 77,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-16"
   },
   {
    "name": "blockfrost-haskell",
@@ -1452,7 +1512,8 @@
    "links": [],
    "stars": 29,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-18"
   },
   {
    "name": "koios-artifacts",
@@ -1473,7 +1534,8 @@
    "links": [],
    "stars": 24,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-03"
   },
   {
    "name": "boros",
@@ -1494,7 +1556,8 @@
    "links": [],
    "stars": 19,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "ODATANO",
@@ -1515,7 +1578,8 @@
    "links": [],
    "stars": 15,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-04"
   },
   {
    "name": "pg_cardano",
@@ -1536,7 +1600,8 @@
    "links": [],
    "stars": 12,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-14"
   },
   {
    "name": "maestro-cardano-typescript-sdk",
@@ -1557,7 +1622,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-04",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-04-30"
   },
   {
    "name": "maestro-cardano-indexer",
@@ -1578,7 +1644,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-15"
   },
   {
    "name": "anvil-api-examples",
@@ -1599,7 +1666,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-01"
   },
   {
    "name": "Ada Anvil",
@@ -1641,7 +1709,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-28"
   },
   {
    "name": "Koios",
@@ -1683,7 +1752,8 @@
    "links": [],
    "stars": 3173,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "guild-operators",
@@ -1704,7 +1774,8 @@
    "links": [],
    "stars": 365,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "ouroboros-network",
@@ -1725,7 +1796,8 @@
    "links": [],
    "stars": 297,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "cardano-ledger",
@@ -1746,7 +1818,8 @@
    "links": [],
    "stars": 298,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "mithril",
@@ -1767,7 +1840,8 @@
    "links": [],
    "stars": 155,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "cardano-base",
@@ -1788,7 +1862,8 @@
    "links": [],
    "stars": 106,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "cardano-cli",
@@ -1809,7 +1884,8 @@
    "links": [],
    "stars": 73,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-06"
   },
   {
    "name": "partner-chains",
@@ -1830,7 +1906,8 @@
    "links": [],
    "stars": 70,
    "updated": "2026-04",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-04-23"
   },
   {
    "name": "metis",
@@ -1851,7 +1928,8 @@
    "links": [],
    "stars": 21,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-05"
   },
   {
    "name": "acropolis",
@@ -1872,7 +1950,8 @@
    "links": [],
    "stars": 15,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "cardano-scripts",
@@ -1893,7 +1972,8 @@
    "links": [],
    "stars": 2,
    "updated": "2021-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2021-11-21"
   },
   {
    "name": "yaci-devkit",
@@ -1914,7 +1994,8 @@
    "links": [],
    "stars": 70,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "toolkit-for-cardano",
@@ -1935,7 +2016,8 @@
    "links": [],
    "stars": 134,
    "updated": "2021-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2021-10-26"
   },
   {
    "name": "cardano-signer",
@@ -1956,7 +2038,8 @@
    "links": [],
    "stars": 53,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-26"
   },
   {
    "name": "laceanatomy",
@@ -1977,7 +2060,8 @@
    "links": [],
    "stars": 23,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "telchar",
@@ -1998,7 +2082,8 @@
    "links": [],
    "stars": 13,
    "updated": "2025-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-03-20"
   },
   {
    "name": "chainfuzz",
@@ -2019,7 +2104,8 @@
    "links": [],
    "stars": 7,
    "updated": "2025-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-07-22"
   },
   {
    "name": "setup-aiken",
@@ -2040,7 +2126,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-23"
   },
   {
    "name": "Aiken VS Code extension",
@@ -2082,7 +2169,8 @@
    "links": [],
    "stars": 578,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "cardano-token-registry",
@@ -2103,7 +2191,8 @@
    "links": [],
    "stars": 305,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "treasury-contracts",
@@ -2124,7 +2213,8 @@
    "links": [],
    "stars": 9,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-13"
   },
   {
    "name": "cbor-sets-spec",
@@ -2145,7 +2235,8 @@
    "links": [],
    "stars": 2,
    "updated": "2017-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2017-08-25"
   },
   {
    "name": "DeFi-Kernel-Registry-for-Cardano",
@@ -2166,7 +2257,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-08"
   },
   {
    "name": "Governance",
@@ -2187,7 +2279,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-13"
   },
   {
    "name": "sellout-treasury-withdrawal",
@@ -2208,7 +2301,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-24"
   },
   {
    "name": "cardano-swaps",
@@ -2229,7 +2323,8 @@
    "links": [],
    "stars": 80,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-09"
   },
   {
    "name": "dexter",
@@ -2250,7 +2345,8 @@
    "links": [],
    "stars": 65,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-24"
   },
   {
    "name": "sdk",
@@ -2271,7 +2367,8 @@
    "links": [],
    "stars": 61,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-22"
   },
   {
    "name": "cardano-dex-contracts",
@@ -2292,7 +2389,8 @@
    "links": [],
    "stars": 35,
    "updated": "2023-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-09-13"
   },
   {
    "name": "sundae-contracts",
@@ -2313,7 +2411,8 @@
    "links": [],
    "stars": 23,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-01"
   },
   {
    "name": "sundae-sdk",
@@ -2334,7 +2433,8 @@
    "links": [],
    "stars": 19,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "charli3-dendrite",
@@ -2355,7 +2455,8 @@
    "links": [],
    "stars": 16,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-07"
   },
   {
    "name": "minswap-dex-v2",
@@ -2376,7 +2477,8 @@
    "links": [],
    "stars": 15,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-13"
   },
   {
    "name": "minswap-stableswap",
@@ -2397,7 +2499,8 @@
    "links": [],
    "stars": 8,
    "updated": "2024-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-06-07"
   },
   {
    "name": "muesliswap-cardano-pool-contracts",
@@ -2418,7 +2521,8 @@
    "links": [],
    "stars": 5,
    "updated": "2022-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2022-10-05"
   },
   {
    "name": "splash-core",
@@ -2439,7 +2543,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-14"
   },
   {
    "name": "splash-offchain-multiplatform",
@@ -2460,7 +2565,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "dex-serializer",
@@ -2481,7 +2587,8 @@
    "links": [],
    "stars": 3,
    "updated": "2024-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-09-11"
   },
   {
    "name": "minswap-lbe-v2",
@@ -2502,7 +2609,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-20"
   },
   {
    "name": "dex-v2-contracts",
@@ -2523,7 +2631,8 @@
    "links": [],
    "stars": 1,
    "updated": "2024-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-10-31"
   },
   {
    "name": "docs",
@@ -2544,7 +2653,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-04"
   },
   {
    "name": "protocol-sdk",
@@ -2565,7 +2675,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-19"
   },
   {
    "name": "rapid-dex",
@@ -2586,7 +2697,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-30"
   },
   {
    "name": "aleph-cli",
@@ -2607,7 +2719,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-07-10"
   },
   {
    "name": "minswap-sdk",
@@ -2628,7 +2741,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-07",
-   "archived": true
+   "archived": true,
+   "pushed": "2025-07-01"
   },
   {
    "name": "rapid-dex-contracts",
@@ -2649,7 +2763,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-12",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-12-12"
   },
   {
    "name": "scooper-v2",
@@ -2670,7 +2785,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "sdk-example",
@@ -2691,7 +2807,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-02-20"
   },
   {
    "name": "spectrum-offchain-lib",
@@ -2712,7 +2829,8 @@
    "links": [],
    "stars": 0,
    "updated": "2024-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-07-09"
   },
   {
    "name": "cardano-loans",
@@ -2733,7 +2851,8 @@
    "links": [],
    "stars": 28,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-15"
   },
   {
    "name": "liqwid-liquidation-bot",
@@ -2754,7 +2873,8 @@
    "links": [],
    "stars": 22,
    "updated": "2024-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-11-13"
   },
   {
    "name": "aada-finance",
@@ -2775,7 +2895,8 @@
    "links": [],
    "stars": 21,
    "updated": "2023-01",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-01-16"
   },
   {
    "name": "djed-stablecoin-prototype",
@@ -2796,7 +2917,8 @@
    "links": [],
    "stars": 10,
    "updated": "2021-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2021-08-25"
   },
   {
    "name": "aada_v1_aiken",
@@ -2817,7 +2939,8 @@
    "links": [],
    "stars": 6,
    "updated": "2023-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-04-14"
   },
   {
    "name": "staking-contracts",
@@ -2838,7 +2961,8 @@
    "links": [],
    "stars": 6,
    "updated": "2024-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-03-11"
   },
   {
    "name": "cardano-vesting-dApp",
@@ -2859,7 +2983,8 @@
    "links": [],
    "stars": 4,
    "updated": "2024-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-03-06"
   },
   {
    "name": "ft-cardano-loans-v4",
@@ -2880,7 +3005,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "butane-contracts",
@@ -2901,7 +3027,8 @@
    "links": [],
    "stars": 3,
    "updated": "2024-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-11-21"
   },
   {
    "name": "technical-mvp",
@@ -2922,7 +3049,8 @@
    "links": [],
    "stars": 3,
    "updated": "2024-01",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-01-23"
   },
   {
    "name": "meld-staking-public",
@@ -2943,7 +3071,8 @@
    "links": [],
    "stars": 2,
    "updated": "2023-12",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-12-19"
   },
   {
    "name": "felis",
@@ -2964,7 +3093,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-10"
   },
   {
    "name": "statera-protocol-cardano",
@@ -2985,7 +3115,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-11-12"
   },
   {
    "name": "fortuna",
@@ -3006,7 +3137,8 @@
    "links": [],
    "stars": 52,
    "updated": "2024-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2024-11-11"
   },
   {
    "name": "tempus",
@@ -3027,7 +3159,8 @@
    "links": [],
    "stars": 2,
    "updated": "2023-12",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-12-27"
   },
   {
    "name": "lumpfun-contracts",
@@ -3048,7 +3181,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-19"
   },
   {
    "name": "lumppad-contracts",
@@ -3069,7 +3203,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-26"
   },
   {
    "name": "oracles",
@@ -3090,7 +3225,8 @@
    "links": [],
    "stars": 14,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "oracle-datum-lib",
@@ -3111,7 +3247,8 @@
    "links": [],
    "stars": 3,
    "updated": "2022-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2022-10-19"
   },
   {
    "name": "charli3-pull-oracle-contracts",
@@ -3132,7 +3269,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-01",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-01-09"
   },
   {
    "name": "oracle-integration-aiken",
@@ -3153,7 +3291,8 @@
    "links": [],
    "stars": 2,
    "updated": "2025-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-02-24"
   },
   {
    "name": "datum-demo",
@@ -3174,7 +3313,8 @@
    "links": [],
    "stars": 1,
    "updated": "2023-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-11-01"
   },
   {
    "name": "cer-feeds",
@@ -3195,7 +3335,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-18"
   },
   {
    "name": "datum-demo-v3",
@@ -3216,7 +3357,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-16"
   },
   {
    "name": "liqwid-pyth-oracle",
@@ -3237,7 +3379,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-19"
   },
   {
    "name": "Orcfax explorer",
@@ -3279,7 +3422,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-20"
   },
   {
    "name": "orcfax-examples",
@@ -3300,7 +3444,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-06-26"
   },
   {
    "name": "price-monitor",
@@ -3321,7 +3466,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-06",
-   "archived": true
+   "archived": true,
+   "pushed": "2025-06-30"
   },
   {
    "name": "pyth-lazer-cardano",
@@ -3342,7 +3488,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-20"
   },
   {
    "name": "vesting-oracle-smart-contract-example",
@@ -3363,7 +3510,8 @@
    "links": [],
    "stars": 0,
    "updated": "2023-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2023-10-17"
   },
   {
    "name": "hydra",
@@ -3384,7 +3532,8 @@
    "links": [],
    "stars": 338,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "ouroboros-leios",
@@ -3405,7 +3554,8 @@
    "links": [],
    "stars": 63,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midgard",
@@ -3426,7 +3576,8 @@
    "links": [],
    "stars": 25,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "peras-design",
@@ -3447,7 +3598,8 @@
    "links": [],
    "stars": 4,
    "updated": "2025-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-04-21"
   },
   {
    "name": "DAYPASS",
@@ -3468,7 +3620,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-20"
   },
   {
    "name": "strike-builder-reference",
@@ -3489,7 +3642,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-19"
   },
   {
    "name": "midnight-awesome-dapps",
@@ -3510,7 +3664,8 @@
    "links": [],
    "stars": 112,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-03"
   },
   {
    "name": "midnight-sdk",
@@ -3531,7 +3686,8 @@
    "links": [],
    "stars": 8,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "Midnight developer docs",
@@ -3582,7 +3738,8 @@
    "links": [],
    "stars": 50,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "servicedesk",
@@ -3603,7 +3760,8 @@
    "links": [],
    "stars": 7,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-architecture",
@@ -3624,7 +3782,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-25"
   },
   {
    "name": "midnight-faucet-api",
@@ -3645,7 +3804,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "Awesome Midnight",
@@ -3739,7 +3899,8 @@
    "links": [],
    "stars": 9,
    "updated": "2026-11",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-11-03"
   },
   {
    "name": "midnight-examples",
@@ -3760,7 +3921,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "example-counter",
@@ -3781,7 +3943,8 @@
    "links": [],
    "stars": 22,
    "updated": "2026-08",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-08-14"
   },
   {
    "name": "midnight-starter-template",
@@ -3802,7 +3965,8 @@
    "links": [],
    "stars": 22,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-09"
   },
   {
    "name": "example-bboard",
@@ -3823,7 +3987,8 @@
    "links": [],
    "stars": 21,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-26"
   },
   {
    "name": "midnight-starter-template",
@@ -3844,7 +4009,8 @@
    "links": [],
    "stars": 15,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-18"
   },
   {
    "name": "midnight-apps",
@@ -3865,7 +4031,8 @@
    "links": [],
    "stars": 12,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-15"
   },
   {
    "name": "example-zkloan",
@@ -3886,7 +4053,8 @@
    "links": [],
    "stars": 7,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-22"
   },
   {
    "name": "example-hello-world",
@@ -3907,7 +4075,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-contracts-wizard",
@@ -3928,7 +4097,8 @@
    "links": [],
    "stars": 4,
    "updated": "2025-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-10-29"
   },
   {
    "name": "midnight-setup",
@@ -3949,7 +4119,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-17"
   },
   {
    "name": "example-battleship",
@@ -3970,7 +4141,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-26"
   },
   {
    "name": "midnight-leaderboard",
@@ -3991,7 +4163,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "example-kitties",
@@ -4012,7 +4185,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "example-private-party",
@@ -4033,7 +4207,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-23"
   },
   {
    "name": "hello-world-compact",
@@ -4054,7 +4229,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-14"
   },
   {
    "name": "sundae-midnight-examples",
@@ -4075,7 +4251,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-30"
   },
   {
    "name": "example-locker",
@@ -4096,7 +4273,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-14"
   },
   {
    "name": "example-shielded-chips",
@@ -4117,7 +4295,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-14"
   },
   {
    "name": "midnight-tip-jar",
@@ -4138,7 +4317,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "modular-starter",
@@ -4159,7 +4339,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-22"
   },
   {
    "name": "midnight-division",
@@ -4180,7 +4361,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-10"
   },
   {
    "name": "compact",
@@ -4201,7 +4383,8 @@
    "links": [],
    "stars": 24,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-04"
   },
   {
    "name": "compact",
@@ -4222,7 +4405,8 @@
    "links": [],
    "stars": 48,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "setup-compact-action",
@@ -4243,7 +4427,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "compact-js",
@@ -4264,7 +4449,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "midnight-zkir",
@@ -4285,7 +4471,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-js",
@@ -4306,7 +4493,8 @@
    "links": [],
    "stars": 40,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "effectstream",
@@ -4336,7 +4524,8 @@
    ],
    "stars": 93,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight",
@@ -4357,7 +4546,8 @@
    "links": [],
    "stars": 13,
    "updated": "2026-01",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-01-31"
   },
   {
    "name": "midnight-dapp-connector-api",
@@ -4378,7 +4568,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "sdk",
@@ -4399,7 +4590,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "midday-sdk",
@@ -4420,7 +4612,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "NorthStar-SDK",
@@ -4441,7 +4634,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "midnight-mobile-sdk",
@@ -4462,7 +4656,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-02"
   },
   {
    "name": "DPP-SDK",
@@ -4483,7 +4678,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-19"
   },
   {
    "name": "midnight-dotnet-sdk",
@@ -4504,7 +4700,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-07"
   },
   {
    "name": "midnight-wallet-kit",
@@ -4546,7 +4743,8 @@
    "links": [],
    "stars": 21,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-wallet",
@@ -4567,7 +4765,8 @@
    "links": [],
    "stars": 16,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "moth-wallet",
@@ -4588,7 +4787,8 @@
    "links": [],
    "stars": 11,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "1AM-app-registery",
@@ -4609,7 +4809,8 @@
    "links": [],
    "stars": 8,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "midnight-cli",
@@ -4630,7 +4831,8 @@
    "links": [],
    "stars": 9,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-06"
   },
   {
    "name": "midnight-dust-generator",
@@ -4651,7 +4853,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-15"
   },
   {
    "name": "midnight-cnight-to-dust-dapp",
@@ -4672,7 +4875,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "passport-demo",
@@ -4693,7 +4897,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-03"
   },
   {
    "name": "1AM",
@@ -4765,7 +4970,8 @@
    "links": [],
    "stars": 70,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-zk",
@@ -4786,7 +4992,8 @@
    "links": [],
    "stars": 69,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "Starstream",
@@ -4807,7 +5014,8 @@
    "links": [],
    "stars": 49,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "Nightstream",
@@ -4828,7 +5036,8 @@
    "links": [],
    "stars": 40,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-node-docker",
@@ -4849,7 +5058,8 @@
    "links": [],
    "stars": 34,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-02"
   },
   {
    "name": "midnight-indexer",
@@ -4870,7 +5080,8 @@
    "links": [],
    "stars": 31,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "midnight-ledger",
@@ -4891,7 +5102,8 @@
    "links": [],
    "stars": 28,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-local-dev",
@@ -4912,7 +5124,8 @@
    "links": [],
    "stars": 13,
    "updated": "2026-10",
-   "archived": true
+   "archived": true,
+   "pushed": "2026-10-26"
   },
   {
    "name": "midnight-playground",
@@ -4933,7 +5146,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-16"
   },
   {
    "name": "midnight-proof-server",
@@ -4954,7 +5168,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-02"
   },
   {
    "name": "NIGHTGATE",
@@ -4975,7 +5190,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "midnight-proof-server",
@@ -4996,7 +5212,8 @@
    "links": [],
    "stars": 3,
    "updated": "2025-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-11-17"
   },
   {
    "name": "midnight-2-offers",
@@ -5017,7 +5234,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-17"
   },
   {
    "name": "umbradb",
@@ -5038,7 +5256,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "compact-tools",
@@ -5059,7 +5278,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-05"
   },
   {
    "name": "compact.vim",
@@ -5080,7 +5300,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-25"
   },
   {
    "name": "NIGHTFORGE",
@@ -5101,7 +5322,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-06"
   },
   {
    "name": "midnight-integration",
@@ -5122,7 +5344,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "compact-lsp",
@@ -5143,7 +5366,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-28"
   },
   {
    "name": "compact-playground",
@@ -5164,7 +5388,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-18"
   },
   {
    "name": "dpo2u-midnight-relayer",
@@ -5185,7 +5410,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-10"
   },
   {
    "name": "midnight-cast",
@@ -5206,7 +5432,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-08"
   },
   {
    "name": "midnight-doctor",
@@ -5227,7 +5454,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-27"
   },
   {
    "name": "night-check",
@@ -5248,7 +5476,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-30"
   },
   {
    "name": "agent-lump",
@@ -5269,7 +5498,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-14"
   },
   {
    "name": "Compact VS Code extension",
@@ -5311,7 +5541,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-30"
   },
   {
    "name": "Midnight Playground",
@@ -5353,7 +5584,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-26"
   },
   {
    "name": "Nightwatch",
@@ -5374,7 +5606,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-05"
   },
   {
    "name": "nite-zk-profiler",
@@ -5395,7 +5628,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-31"
   },
   {
    "name": "Web3Fast Midnight",
@@ -5442,7 +5676,8 @@
    ],
    "stars": 22,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "mip-0018-midnight-contracts",
@@ -5463,7 +5698,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-07"
   },
   {
    "name": "mip-0018",
@@ -5484,7 +5720,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "mip-zswap-offer",
@@ -5505,7 +5742,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "MIP-0001: Midnight Improvement Proposal Process",
@@ -6270,7 +6508,8 @@
    "links": [],
    "stars": 56,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-nft-standard",
@@ -6291,7 +6530,8 @@
    "links": [],
    "stars": 8,
    "updated": "2025-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-07-01"
   },
   {
    "name": "Midnight-Token-Registry",
@@ -6312,7 +6552,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-11"
   },
   {
    "name": "example-nft-contracts",
@@ -6333,7 +6574,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "cft-demo",
@@ -6354,7 +6596,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-16"
   },
   {
    "name": "exploring-native-shielded-token-indexing",
@@ -6375,7 +6618,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-22"
   },
   {
    "name": "fungible-token-workspace",
@@ -6396,7 +6640,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-04"
   },
   {
    "name": "mint-test-tokens",
@@ -6417,7 +6662,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-26"
   },
   {
    "name": "MintKey",
@@ -6438,7 +6684,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-31"
   },
   {
    "name": "nmkr-midnight-api",
@@ -6459,7 +6706,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "token-mint-contract",
@@ -6480,7 +6728,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-21"
   },
   {
    "name": "midnight-rwa",
@@ -6501,7 +6750,8 @@
    "links": [],
    "stars": 13,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-05"
   },
   {
    "name": "bucket-defi-dapp",
@@ -6522,7 +6772,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-28"
   },
   {
    "name": "capacity-exchange",
@@ -6543,7 +6794,8 @@
    "links": [],
    "stars": 5,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "midnight-bank",
@@ -6564,7 +6816,8 @@
    "links": [],
    "stars": 5,
    "updated": "2025-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-08-18"
   },
   {
    "name": "statera-protocol-midnight",
@@ -6585,7 +6838,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-02"
   },
   {
    "name": "midnight-escrow",
@@ -6606,7 +6860,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-04"
   },
   {
    "name": "MidPilot",
@@ -6627,7 +6882,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-12"
   },
   {
    "name": "zswap-offerfiles-kernel",
@@ -6648,7 +6904,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "dMarket",
@@ -6669,7 +6926,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-11"
   },
   {
    "name": "hydra-stake-protocol",
@@ -6690,7 +6948,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-27"
   },
   {
    "name": "Incoterms Escrow",
@@ -6711,7 +6970,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-30"
   },
   {
    "name": "midnight-bonding-curve",
@@ -6732,7 +6992,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-25"
   },
   {
    "name": "pintent",
@@ -6753,7 +7014,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-22"
   },
   {
    "name": "SilentBid",
@@ -6774,7 +7036,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-09"
   },
   {
    "name": "SilentLedger",
@@ -6795,7 +7058,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-06"
   },
   {
    "name": "Midnight Private Auction",
@@ -6816,7 +7080,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-01"
   },
   {
    "name": "Privoice",
@@ -6837,7 +7102,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-08"
   },
   {
    "name": "ascend-dex",
@@ -6858,7 +7124,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-07"
   },
   {
    "name": "Avtar.ai",
@@ -6879,7 +7146,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-16"
   },
   {
    "name": "DarkPool DEX",
@@ -6900,7 +7168,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-31"
   },
   {
    "name": "midnight-polisZK",
@@ -6921,7 +7190,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-15"
   },
   {
    "name": "midnight-swaps-smart-contracts",
@@ -6942,7 +7212,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-29"
   },
   {
    "name": "Selective-Disclosure USDM Invoice Relay",
@@ -6963,7 +7234,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-02"
   },
   {
    "name": "Selkie",
@@ -6984,7 +7256,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-27"
   },
   {
    "name": "statera-midnight-launchpad",
@@ -7005,7 +7278,8 @@
    "links": [],
    "stars": 0,
    "updated": "2025-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2025-09-07"
   },
   {
    "name": "Tally",
@@ -7026,7 +7300,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-06"
   },
   {
    "name": "Midnight Identity",
@@ -7047,7 +7322,8 @@
    "links": [],
    "stars": 13,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-05"
   },
   {
    "name": "NIGHTPASS",
@@ -7068,7 +7344,8 @@
    "links": [],
    "stars": 10,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-27"
   },
   {
    "name": "AutoDiscovery",
@@ -7089,7 +7366,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-08"
   },
   {
    "name": "Kredz",
@@ -7110,7 +7388,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-20"
   },
   {
    "name": "Midnight Authenticator",
@@ -7131,7 +7410,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-01"
   },
   {
    "name": "midnight-did",
@@ -7152,7 +7432,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-11"
   },
   {
    "name": "zkTanitID",
@@ -7173,7 +7454,8 @@
    "links": [],
    "stars": 3,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-12"
   },
   {
    "name": "AirLog",
@@ -7194,7 +7476,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-25"
   },
   {
    "name": "Anonymous Whispers",
@@ -7215,7 +7498,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-30"
   },
   {
    "name": "Credence",
@@ -7236,7 +7520,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-20"
   },
   {
    "name": "DPO2U Midnight",
@@ -7257,7 +7542,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-09"
   },
   {
    "name": "Midnight Cloak",
@@ -7278,7 +7564,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-08"
   },
   {
    "name": "midnight-verifiable-credentials",
@@ -7299,7 +7586,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "Nightroom",
@@ -7320,7 +7608,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-24"
   },
   {
    "name": "NMKR-Identity",
@@ -7341,7 +7630,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-19"
   },
   {
    "name": "Quote of the Day",
@@ -7362,7 +7652,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-09"
   },
   {
    "name": "ZIP",
@@ -7383,7 +7674,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-05",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-05-19"
   },
   {
    "name": "ZkCred",
@@ -7404,7 +7696,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-29"
   },
   {
    "name": "midnight-vote",
@@ -7425,7 +7718,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-25"
   },
   {
    "name": "Midnight-ZK-Judge",
@@ -7446,7 +7740,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-17"
   },
   {
    "name": "SentinelDID",
@@ -7467,7 +7762,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-06"
   },
   {
    "name": "ShadowVoice",
@@ -7488,7 +7784,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-26"
   },
   {
    "name": "Anonboard",
@@ -7509,7 +7806,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-01"
   },
   {
    "name": "Lantern",
@@ -7530,7 +7828,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-27"
   },
   {
    "name": "midnight-proofpledge",
@@ -7551,7 +7850,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-11"
   },
   {
    "name": "NIGHTGATE-CONTRACTS",
@@ -7572,7 +7872,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-08"
   },
   {
    "name": "Proof-of-Age Gate",
@@ -7593,7 +7894,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-06",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-06-22"
   },
   {
    "name": "zeroscore-midnight",
@@ -7614,7 +7916,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-13"
   },
   {
    "name": "Midnight Seabattle",
@@ -7635,7 +7938,8 @@
    "links": [],
    "stars": 25,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-24"
   },
   {
    "name": "dust-to-dust",
@@ -7656,7 +7960,8 @@
    "links": [],
    "stars": 7,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-14"
   },
   {
    "name": "FundAGoal",
@@ -7677,7 +7982,8 @@
    "links": [],
    "stars": 6,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-18"
   },
   {
    "name": "NextMed",
@@ -7698,7 +8004,8 @@
    "links": [],
    "stars": 4,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-15"
   },
   {
    "name": "kachina-colosseum",
@@ -7719,7 +8026,8 @@
    "links": [],
    "stars": 2,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-14"
   },
   {
    "name": "Midnight DiceRoll Game",
@@ -7740,7 +8048,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-04",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-04-03"
   },
   {
    "name": "Midnight Prediction Market App",
@@ -7761,7 +8070,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-07",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-07-29"
   },
   {
    "name": "Midnight Starship",
@@ -7782,7 +8092,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-28"
   },
   {
    "name": "midnight-dao-contract",
@@ -7803,7 +8114,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-02",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-02-03"
   },
   {
    "name": "midnight-rps-sample-app",
@@ -7824,7 +8136,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-21"
   },
   {
    "name": "prediction-market",
@@ -7845,7 +8158,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-11"
   },
   {
    "name": "go-fish",
@@ -7866,7 +8180,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-25"
   },
   {
    "name": "gyotak-midnight",
@@ -7887,7 +8202,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-10",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-10-05"
   },
   {
    "name": "Lunardraw",
@@ -7908,7 +8224,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "MatkaNight",
@@ -7929,7 +8246,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-08",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-08-31"
   },
   {
    "name": "Midnight Private Voting",
@@ -7950,7 +8268,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-08"
   },
   {
    "name": "midnight-pool",
@@ -7971,7 +8290,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-16"
   },
   {
    "name": "midnight-private-dao",
@@ -7992,7 +8312,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-09",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-09-13"
   },
   {
    "name": "Nightcast",
@@ -8013,7 +8334,8 @@
    "links": [],
    "stars": 1,
    "updated": "2026-11",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-11-10"
   },
   {
    "name": "werewolf",
@@ -8034,7 +8356,8 @@
    "links": [],
    "stars": 0,
    "updated": "2026-03",
-   "archived": false
+   "archived": false,
+   "pushed": "2026-03-05"
   }
  ]
 }

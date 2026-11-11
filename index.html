@@ -19,9 +19,9 @@
 <meta name="twitter:image" content="https://mj-jinx.github.io/cardano-midnight-starter-kit/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: one reading column with a sticky tab bar (Setup / Midnight / Cardano / AI tools + search); catalog rows grouped by category. */
+/* Layout: one reading column with a sticky tab bar (Setup / All tools / Midnight / Cardano / AI tools + search); catalog rows grouped by category or sorted by latest update. */
 :root {
   --bg: #f4f6f9;
   --surface: #ffffff;
@@ -81,9 +81,37 @@ p { margin: 0; }
 code { font-family: var(--font-mono); font-size: 0.86em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
 [hidden] { display: none !important; }
 
-header.top { padding-block: 44px 22px; display: grid; gap: 12px; }
-.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.lede { max-width: 65ch; color: var(--muted); font-size: 1.08rem; }
+/* Hero banner: logos + "links checked weekly", audience pills, title + summary, disclaimer */
+header.top { padding-block: 34px 24px; display: grid; position: relative; isolation: isolate; }
+header.top::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle, var(--line) 1.3px, transparent 1.8px); background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 80%); mask-image: linear-gradient(to bottom, #000 35%, transparent 80%);
+}
+.hero-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.brands { display: flex; align-items: center; gap: 18px; }
+.logo { display: block; background-color: currentColor; -webkit-mask: no-repeat center / contain; mask: no-repeat center / contain; }
+.logo-ada { width: 139px; height: 29px; color: var(--cardano); -webkit-mask-image: url(assets/logos/cardano-mask.png); mask-image: url(assets/logos/cardano-mask.png); }
+.logo-mn { width: 99px; height: 23px; color: var(--fg); -webkit-mask-image: url(assets/logos/midnight-mask.png); mask-image: url(assets/logos/midnight-mask.png); }
+.brand-sep { width: 1.5px; height: 30px; background: var(--line); }
+.live { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.live .dot { width: 9px; height: 9px; border-radius: 50%; background: #1f9d55; box-shadow: 0 0 0 4px rgba(31, 157, 85, 0.2); }
+.for { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 52px; font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; border-radius: 6px; color: #fff; }
+.pill-b { background: #0033ad; }
+.pill-ai { background: #6c47f5; }
+.hero-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px 44px; margin-top: 16px; }
+header.top h1 { font-size: clamp(2.1rem, 9.2vw, 3.6rem); font-weight: 800; letter-spacing: -0.035em; line-height: 0.98; text-wrap: initial; }
+header.top h1 .amp { color: var(--cardano); }
+.hero-sub { font-size: 1.12rem; line-height: 1.5; color: var(--muted); border-left: 2px solid var(--line); padding-left: 20px; }
+.hero-sub strong { color: var(--fg); font-weight: 600; }
+header.top .notice { margin-top: 30px; max-width: none; }
+@media (max-width: 760px) {
+  .hero-main { grid-template-columns: minmax(0, 1fr); }
+  .for { margin-top: 34px; }
+  .hero-sub { max-width: 30em; }
+  .hero-sub br.d { display: none; }
+}
 
 /* Tab bar + search */
 .bar {
@@ -216,15 +244,26 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
 <body>
 <div class="wrap">
 <header class="top">
-  <div class="eyebrow">Starter kit · links checked weekly</div>
-  <h1>Cardano &amp; Midnight Starter Kit</h1>
-  <p class="lede">A setup guide for Claude Code in VS Code, plus a searchable catalog of 360+ repos, tools and Midnight Improvement Proposals for Cardano and Midnight. Every entry is labelled with a category and a complexity level.</p>
+  <div class="hero-bar">
+    <div class="brands">
+      <span class="logo logo-ada" role="img" aria-label="Cardano"></span>
+      <span class="brand-sep" aria-hidden="true"></span>
+      <span class="logo logo-mn" role="img" aria-label="Midnight"></span>
+    </div>
+    <div class="live"><span class="dot" aria-hidden="true"></span>Links checked weekly</div>
+  </div>
+  <div class="for">For <span class="pill pill-b"><span aria-hidden="true">&lt;&gt;</span>Builders</span> &amp; <span class="pill pill-ai"><span aria-hidden="true">&#10022;</span>AI users</span></div>
+  <div class="hero-main">
+    <h1>Cardano <span class="amp">&amp;</span> Midnight<br>Starter Kit</h1>
+    <p class="hero-sub">Setup guide for Claude Code<br class="d"> in VS Code, plus <strong>370+ repos,<br class="d"> tools &amp; MIPs</strong>.</p>
+  </div>
   <p class="notice" role="note"><strong>Disclaimer.</strong> This is a starter kit for learning, not an endorsement or an audit. Check every repo, tool and command yourself before you use it. This space changes fast: projects get updated, abandoned or compromised without notice, and entries here can go out of date. You use anything listed here at your own risk, and the author accepts no responsibility for any loss, damage or other outcome. Nothing here is financial, legal or security advice.</p>
 </header>
 
 <nav class="bar" aria-label="Sections">
   <div class="tabs">
     <a href="#setup" data-view="setup">Setup guide</a>
+    <a href="#all" data-view="all">All tools<span class="n" data-count="all"></span></a>
     <a href="#midnight" data-view="midnight">Midnight<span class="n" data-count="midnight"></span></a>
     <a href="#cardano" data-view="cardano">Cardano<span class="n" data-count="cardano"></span></a>
     <a href="#ai" data-view="ai">AI tools<span class="n" data-count="ai"></span></a>
@@ -435,6 +474,7 @@ npm install @meshsdk/core</pre></div>
       <div class="frow" id="f-src"><span class="lbl">Source</span></div>
       <div class="frow" id="f-level"><span class="lbl">Level</span></div>
       <div class="frow" id="f-cat"><span class="lbl">Category</span></div>
+      <div class="frow" id="f-sort"><span class="lbl">Sort</span></div>
     </div>
     <div class="status"><span id="count"></span><button type="button" id="clear" hidden>Clear filters</button></div>
     <p class="disclaimer">Check every repo before you use it, Official ones included. Community projects are listed, not audited. Never enter a real seed phrase into a demo.</p>
@@ -475,8 +515,10 @@ npm install @meshsdk/core</pre></div>
     box.appendChild(btn);
   });
 
-  var VIEWS = ['setup', 'midnight', 'cardano', 'ai'];
+  var VIEWS = ['setup', 'all', 'midnight', 'cardano', 'ai'];
+  var SECTIONS = ['midnight', 'cardano', 'ai'];
   var INTRO = {
+    all: 'Every entry from the Midnight, Cardano and AI tools tabs in one list.',
     midnight: 'Official repos, community tools and DApps, plus every Midnight Improvement Proposal (MIP).',
     cardano: 'Languages, SDKs, chain APIs, infrastructure, DeFi protocols, oracles and research.',
     ai: 'Claude Code plugins, agent skills and MCP servers for both chains.'
@@ -484,12 +526,18 @@ npm install @meshsdk/core</pre></div>
   var LVL = { Beginner: 'b', Intermediate: 'i', Advanced: 'a' };
   var CHAIN = { midnight: 'Midnight', cardano: 'Cardano', both: 'Cardano + Midnight' };
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var state = { view: 'setup', cat: 'all', level: 'all', src: 'all', q: '' };
+  var state = { view: 'setup', cat: 'all', level: 'all', src: 'all', q: '', sort: 'default' };
   var data = null;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function stars(n) { if (n == null) return null; return n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'k' : String(n); }
   function month(s) { if (!s) return null; var p = s.split('-'); return MONTHS[+p[1] - 1] + ' ' + p[0]; }
+  function day(s) { var p = s.split('-'); return (+p[2]) + ' ' + MONTHS[+p[1] - 1] + ' ' + p[0]; }
+  function dateLabel(it) { return it.pushed ? day(it.pushed) : month(it.updated); }
+  // Last GitHub push, for "Latest updated"; entries without a repo sort last
+  function upd(it) { return it.pushed || (it.updated ? it.updated + '-00' : ''); }
+  function cmpUpd(a, b) { var x = upd(a), y = upd(b); return (x < y) - (x > y) || ((b.stars || 0) - (a.stars || 0)) || a.name.toLowerCase().localeCompare(b.name.toLowerCase()); }
+  function live(it) { return !it.unavailable; }
   function inTab(it, tab) { return it.tab === tab || it.also === tab; }
   function catOf(it, tab) { return it.tab === tab ? it.category : it.alsoCategory; }
   function terms() { return state.q.toLowerCase().split(/\s+/).filter(Boolean); }
@@ -520,7 +568,7 @@ npm install @meshsdk/core</pre></div>
     if (it.archived) meta.appendChild(chip('Archived', 'arch'));
     var st = [];
     if (it.stars != null) st.push('★ ' + stars(it.stars));
-    if (it.updated) st.push('updated ' + month(it.updated));
+    if (it.updated) st.push('updated ' + dateLabel(it));
     if (st.length) meta.appendChild(el('span', 'stats', st.join(' · ')));
     if (it.links && it.links.length) {
       var xl = el('span', 'xlinks');
@@ -556,21 +604,26 @@ npm install @meshsdk/core</pre></div>
 
     var t = terms();
     var tab = searching ? null : state.view;
-    var pool = data.items.filter(function (it) { return !it.unavailable && (searching || inTab(it, tab)) && matchQ(it, t); });
+    var allView = tab === 'all';
+    var byUpdate = state.sort === 'updated';
+    var pool = data.items.filter(function (it) { return live(it) && (searching || allView || inTab(it, tab)) && matchQ(it, t); });
     function srcOk(it) { return state.src === 'all' || (state.src === 'official') === !!it.official; }
     function lvlOk(it) { return state.level === 'all' || it.level === state.level; }
+    // Groups: categories on a chain tab, sections (Midnight / Cardano / AI tools) on All tools
+    function groupOf(it) { return allView ? it.tab : catOf(it, tab); }
+    function groupLabel(g) { return allView ? data.tabs[g].label : g; }
     var poolS = pool.filter(srcOk), poolL = pool.filter(lvlOk);
     var byLevel = pool.filter(function (it) { return srcOk(it) && lvlOk(it); });
-    var cats = searching ? null : data.tabs[tab].categories;
-    var shown = byLevel.filter(function (it) { return searching || state.cat === 'all' || catOf(it, tab) === state.cat; });
+    var cats = searching ? null : (allView ? SECTIONS : data.tabs[tab].categories);
+    var shown = byLevel.filter(function (it) { return searching || state.cat === 'all' || groupOf(it) === state.cat; });
 
-    document.getElementById('cat-title').textContent = searching ? 'Search results' : data.tabs[tab].label;
+    document.getElementById('cat-title').textContent = searching ? 'Search results' : (allView ? 'All tools' : data.tabs[tab].label);
     document.getElementById('cat-intro').textContent = searching ? 'Matching “' + state.q.trim() + '” across Midnight, Cardano and AI tools.' : INTRO[tab];
 
     // Start-here cards
     var sw = document.getElementById('starts-wrap'), sg = document.getElementById('starts');
     sg.textContent = '';
-    var starts = (!searching && state.cat === 'all' && state.level === 'all' && state.src === 'all') ? data.items.filter(function (it) { return it.start && it.tab === tab; }).sort(function (x, y) { return x.start - y.start; }) : [];
+    var starts = (!searching && !allView && !byUpdate && state.cat === 'all' && state.level === 'all' && state.src === 'all') ? data.items.filter(function (it) { return it.start && it.tab === tab; }).sort(function (x, y) { return x.start - y.start; }) : [];
     sw.hidden = !starts.length;
     starts.forEach(function (it) {
       var c = el('div', 'start');
@@ -593,43 +646,54 @@ npm install @meshsdk/core</pre></div>
       var n = poolS.filter(function (it) { return it.level === l; }).length;
       if (n || state.level === l) lr.appendChild(fbtn(l, n, state.level === l, function () { state.level = l; render(); }));
     });
-    // Category filter (tab views only)
+    // Category filter (Section on All tools; hidden while searching)
     var cr = resetRow('f-cat');
     document.getElementById('f-cat').hidden = searching;
+    cr.firstElementChild.textContent = allView ? 'Section' : 'Category';
     if (!searching) {
       cr.appendChild(fbtn('All', byLevel.length, state.cat === 'all', function () { state.cat = 'all'; render(); }));
       cats.forEach(function (c) {
-        var n = byLevel.filter(function (it) { return catOf(it, tab) === c; }).length;
-        if (n || state.cat === c) cr.appendChild(fbtn(c, n, state.cat === c, function () { state.cat = c; render(); }));
+        var n = byLevel.filter(function (it) { return groupOf(it) === c; }).length;
+        if (n || state.cat === c) cr.appendChild(fbtn(groupLabel(c), n, state.cat === c, function () { state.cat = c; render(); }));
       });
     }
+    // Sort
+    var so = resetRow('f-sort');
+    [['default', searching ? 'Best match' : 'Recommended'], ['updated', 'Latest updated']].forEach(function (o) {
+      so.appendChild(fbtn(o[1], null, state.sort === o[0], function () { state.sort = o[0]; render(); }));
+    });
 
-    var total = searching ? data.items.length : data.items.filter(function (it) { return inTab(it, tab); }).length;
-    document.getElementById('count').textContent = 'Showing ' + shown.length + ' of ' + total;
+    var total = data.items.filter(function (it) { return live(it) && (searching || allView || inTab(it, tab)); }).length;
+    document.getElementById('count').textContent = 'Showing ' + shown.length + ' of ' + total + (byUpdate ? ' · newest GitHub activity first' : '');
     document.getElementById('clear').hidden = !(state.cat !== 'all' || state.level !== 'all' || state.src !== 'all' || searching);
 
     if (!shown.length) {
       var e = el('p', 'empty', 'Nothing matches. Try a shorter search or clear the filters.');
       results.appendChild(e); return;
     }
-    if (searching) {
-      var q = t.join(' ');
-      shown.sort(function (a, b) {
-        var an = a.name.toLowerCase().indexOf(q) >= 0, bn = b.name.toLowerCase().indexOf(q) >= 0;
-        return (bn - an) || cmp(a, b);
-      });
+    // Flat list: search results, or any view sorted by latest update
+    if (searching || byUpdate) {
+      if (byUpdate) shown.sort(cmpUpd);
+      else {
+        var q = t.join(' ');
+        shown.sort(function (a, b) {
+          var an = a.name.toLowerCase().indexOf(q) >= 0, bn = b.name.toLowerCase().indexOf(q) >= 0;
+          return (bn - an) || cmp(a, b);
+        });
+      }
       var g = el('div', 'group');
-      shown.forEach(function (it) { g.appendChild(renderItem(it, { showCat: true, showChain: true })); });
+      var flat = searching || allView;
+      shown.forEach(function (it) { g.appendChild(renderItem(it, { showCat: true, showChain: flat || tab === 'ai', tab: flat ? null : tab })); });
       results.appendChild(g);
       return;
     }
     cats.forEach(function (c) {
-      var list = shown.filter(function (it) { return catOf(it, tab) === c; }).sort(cmp);
+      var list = shown.filter(function (it) { return groupOf(it) === c; }).sort(cmp);
       if (!list.length) return;
       var g = el('div', 'group');
-      var h = el('h3', null, c); h.appendChild(el('span', 'k', String(list.length)));
+      var h = el('h3', null, groupLabel(c)); h.appendChild(el('span', 'k', String(list.length)));
       g.appendChild(h);
-      list.forEach(function (it) { g.appendChild(renderItem(it, { showCat: false, showChain: tab === 'ai', tab: tab })); });
+      list.forEach(function (it) { g.appendChild(renderItem(it, { showCat: allView, showChain: tab === 'ai', tab: allView ? null : tab })); });
       results.appendChild(g);
     });
   }
@@ -660,14 +724,18 @@ npm install @meshsdk/core</pre></div>
     if (VIEWS.indexOf(location.hash.slice(1)) >= 0 && window.scrollY > bar.offsetTop) window.scrollTo(0, bar.offsetTop);
   });
 
-  try { var sq = new URLSearchParams(location.search).get('q'); if (sq) { state.q = sq; q.value = sq; } } catch (e) {}
+  try {
+    var sp = new URLSearchParams(location.search), sq = sp.get('q');
+    if (sq) { state.q = sq; q.value = sq; }
+    if (sp.get('sort') === 'updated') state.sort = 'updated';
+  } catch (e) {}
   route();
   fetch('data/catalog.json', { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) {
       data = d;
-      ['midnight', 'cardano', 'ai'].forEach(function (t) {
-        var n = d.items.filter(function (it) { return !it.unavailable && inTab(it, t); }).length;
+      ['all'].concat(SECTIONS).forEach(function (t) {
+        var n = d.items.filter(function (it) { return live(it) && (t === 'all' || inTab(it, t)); }).length;
         var s = document.querySelector('[data-count="' + t + '"]'); if (s) s.textContent = n;
       });
       render();
