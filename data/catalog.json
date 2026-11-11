@@ -89,7 +89,7 @@
    "chain": "cardano",
    "category": "Claude Code plugins",
    "level": "Beginner",
-   "desc": "Cardano Foundation's Claude Code plugin with 15 skills.",
+   "desc": "Cardano Foundation's Claude Code plugin with 19 skills.",
    "official": true,
    "start": 0,
    "note": "Bundles a large set of third-party docs, which its own threat model flags as a prompt-injection risk. You can copy only the skills you need.",
@@ -163,7 +163,7 @@
      "url": "https://skills.sh"
     }
    ],
-   "stars": 38549,
+   "stars": 38888,
    "updated": "2026-11",
    "archived": false
   },
@@ -197,7 +197,7 @@
      "url": "https://tasteskill.dev"
     }
    ],
-   "stars": 113028,
+   "stars": 113030,
    "updated": "2026-11",
    "archived": false
   },
@@ -218,7 +218,7 @@
    "note": "Its installer reports your GitHub identity to its analytics. Read the skill files on GitHub instead.",
    "tags": [],
    "links": [],
-   "stars": 17,
+   "stars": 18,
    "updated": "2026-10",
    "archived": false
   },
@@ -407,7 +407,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 957,
+   "stars": 959,
    "updated": "2026-11",
    "archived": false
   },
@@ -450,7 +450,7 @@
    "tags": [],
    "links": [],
    "stars": 3,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -647,7 +647,7 @@
      "url": "https://aiken-lang.org/installation-instructions"
     }
    ],
-   "stars": 588,
+   "stars": 589,
    "updated": "2026-11",
    "archived": false
   },
@@ -1010,7 +1010,7 @@
    "tags": [],
    "links": [],
    "stars": 64,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1261,7 +1261,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 328,
+   "stars": 329,
    "updated": "2026-09",
    "archived": false
   },
@@ -1324,7 +1324,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 138,
+   "stars": 139,
    "updated": "2026-11",
    "archived": false
   },
@@ -1346,7 +1346,7 @@
    "tags": [],
    "links": [],
    "stars": 138,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1409,7 +1409,7 @@
    "tags": [],
    "links": [],
    "stars": 84,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1644,28 +1644,6 @@
    "archived": false
   },
   {
-   "name": "ASTRA",
-   "owner": "ODATANO",
-   "url": "https://github.com/ODATANO/ASTRA",
-   "repo": "ODATANO/ASTRA",
-   "tab": "cardano",
-   "also": "midnight",
-   "alsoCategory": "Nodes, indexers & proving",
-   "chain": "both",
-   "category": "Chain data & APIs",
-   "level": "Intermediate",
-   "desc": "Analytics for Cardano and Midnight over OData V4.",
-   "official": false,
-   "start": 0,
-   "note": null,
-   "tags": [],
-   "links": [],
-   "stars": 0,
-   "updated": "2026-10",
-   "archived": false,
-   "unavailable": true
-  },
-  {
    "name": "Koios",
    "owner": null,
    "url": "https://koios.rest",
@@ -1703,7 +1681,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 3172,
+   "stars": 3173,
    "updated": "2026-11",
    "archived": false
   },
@@ -1724,7 +1702,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 364,
+   "stars": 365,
    "updated": "2026-11",
    "archived": false
   },
@@ -1829,7 +1807,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 72,
+   "stars": 73,
    "updated": "2026-11",
    "archived": false
   },
@@ -1893,7 +1871,7 @@
    "tags": [],
    "links": [],
    "stars": 15,
-   "updated": "2026-09",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -1935,7 +1913,7 @@
    "tags": [],
    "links": [],
    "stars": 70,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -2103,7 +2081,7 @@
    "tags": [],
    "links": [],
    "stars": 578,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -2481,7 +2459,7 @@
    "tags": [],
    "links": [],
    "stars": 4,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -3526,7 +3504,7 @@
    "level": "Beginner",
    "desc": "Community-curated list of Midnight DApps, tools and learning resources.",
    "official": true,
-   "start": 9,
+   "start": 8,
    "note": null,
    "tags": [],
    "links": [],
@@ -3547,7 +3525,7 @@
    "level": "Beginner",
    "desc": "Developer hub: a map of every Midnight repo and what it produces, a compatibility matrix and an ecosystem overview.",
    "official": true,
-   "start": 7,
+   "start": 6,
    "note": null,
    "tags": [],
    "links": [],
@@ -3719,7 +3697,7 @@
   {
    "name": "Testnet faucets",
    "owner": null,
-   "url": "https://faucet.preprod.midnight.network/",
+   "url": "https://midnight-tmnight-preprod.nethermind.dev/",
    "repo": null,
    "tab": "midnight",
    "also": null,
@@ -3753,15 +3731,15 @@
    "chain": "midnight",
    "category": "Examples & starters",
    "level": "Beginner",
-   "desc": "Scaffolder: npx create-mn-app sets up a project with a pre-funded local devnet, compile and deploy.",
+   "desc": "Former official scaffolder: npx create-mn-app set up a project with a local devnet, compile and deploy.",
    "official": true,
-   "start": 2,
-   "note": null,
+   "start": 0,
+   "note": "Archived on 3 Nov 2026 and no longer updated for new SDK releases. Use midnight-examples instead. Its successor, mnkit, is in pre-release.",
    "tags": [],
    "links": [],
    "stars": 9,
    "updated": "2026-11",
-   "archived": false
+   "archived": true
   },
   {
    "name": "midnight-examples",
@@ -3774,9 +3752,9 @@
    "chain": "midnight",
    "category": "Examples & starters",
    "level": "Beginner",
-   "desc": "Official learning path in one monorepo: hello-world, private-bid, battleship, tip jar, shielded chips and zk-loan, on one pinned toolchain.",
+   "desc": "Official learning path in one monorepo: hello-world, private-party, battleship, tip jar, shielded chips and zk-loan, all on one pinned ledger 9 toolchain tested in CI.",
    "official": true,
-   "start": 3,
+   "start": 2,
    "note": null,
    "tags": [],
    "links": [],
@@ -3798,7 +3776,7 @@
    "desc": "Counter contract with a CLI.",
    "official": true,
    "start": 0,
-   "note": "Archived. Use midnight-examples or create-mn-app instead.",
+   "note": "Archived. Use midnight-examples instead.",
    "tags": [],
    "links": [],
    "stars": 22,
@@ -4217,7 +4195,7 @@
    "level": "Beginner",
    "desc": "Compact CLI releases and installer.",
    "official": true,
-   "start": 4,
+   "start": 3,
    "note": null,
    "tags": [],
    "links": [],
@@ -4242,7 +4220,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 47,
+   "stars": 48,
    "updated": "2026-11",
    "archived": false
   },
@@ -4322,7 +4300,7 @@
    "level": "Intermediate",
    "desc": "TypeScript SDK for deploying and calling contracts: contracts, providers and testkit.",
    "official": true,
-   "start": 5,
+   "start": 4,
    "note": null,
    "tags": [],
    "links": [],
@@ -4357,7 +4335,7 @@
     }
    ],
    "stars": 93,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4441,7 +4419,7 @@
    "tags": [],
    "links": [],
    "stars": 3,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -4634,10 +4612,10 @@
    "archived": false
   },
   {
-   "name": "midnight-wallet-cli",
-   "owner": "nel349",
-   "url": "https://github.com/nel349/midnight-wallet-cli",
-   "repo": "nel349/midnight-wallet-cli",
+   "name": "midnight-cli",
+   "owner": "kuiralabs",
+   "url": "https://github.com/kuiralabs/midnight-cli",
+   "repo": "kuiralabs/midnight-cli",
    "tab": "midnight",
    "also": null,
    "alsoCategory": null,
@@ -4890,7 +4868,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 30,
+   "stars": 31,
    "updated": "2026-11",
    "archived": false
   },
@@ -5226,7 +5204,7 @@
    "note": null,
    "tags": [],
    "links": [],
-   "stars": 1,
+   "stars": 2,
    "updated": "2026-11",
    "archived": false
   },
@@ -5453,7 +5431,7 @@
    "level": "Intermediate",
    "desc": "Midnight Improvement Proposals (MIPs) and problem statements (MPS). Every MIP is also listed below.",
    "official": true,
-   "start": 8,
+   "start": 7,
    "note": null,
    "tags": [],
    "links": [
@@ -5505,7 +5483,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-10",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -5526,7 +5504,7 @@
    "tags": [],
    "links": [],
    "stars": 0,
-   "updated": "2026-08",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -6286,7 +6264,7 @@
    "level": "Intermediate",
    "desc": "Reusable Compact modules: fungible, multi-token and NFT contracts, access control, security and utilities.",
    "official": false,
-   "start": 6,
+   "start": 5,
    "note": null,
    "tags": [],
    "links": [],
@@ -6669,7 +6647,7 @@
    "tags": [],
    "links": [],
    "stars": 3,
-   "updated": "2026-09",
+   "updated": "2026-11",
    "archived": false
   },
   {
@@ -7049,28 +7027,6 @@
    "stars": 0,
    "updated": "2026-11",
    "archived": false
-  },
-  {
-   "name": "veilpay",
-   "owner": "thirdbase1",
-   "url": "https://github.com/thirdbase1/veilpay",
-   "repo": "thirdbase1/veilpay",
-   "tab": "midnight",
-   "also": null,
-   "alsoCategory": null,
-   "chain": "midnight",
-   "category": "DeFi & payments",
-   "level": "Intermediate",
-   "desc": "Privacy-preserving payment intents.",
-   "official": false,
-   "start": 0,
-   "note": null,
-   "tags": [],
-   "links": [],
-   "stars": 0,
-   "updated": "2026-09",
-   "archived": false,
-   "unavailable": true
   },
   {
    "name": "Midnight Identity",

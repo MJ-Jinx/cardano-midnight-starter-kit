@@ -289,7 +289,7 @@ code .</pre></div>
       <h3>Install Node 22 and the Claude Code CLI inside WSL</h3>
       <p>Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a> using the install line from its README, then:</p>
       <div class="code"><pre>nvm install 22
-corepack enable          <span class="c"># gives you Yarn 4 for the official examples</span>
+npm install -g npm@11    <span class="c"># the official examples need npm 11.10 or newer</span>
 curl -fsSL https://claude.ai/install.sh | bash
 claude --version</pre></div>
       <p class="note">Install guide: <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">code.claude.com/docs/en/setup</a>.</p>
@@ -299,19 +299,19 @@ claude --version</pre></div>
       <h3>Install the Compact toolchain (Midnight)</h3>
       <div class="code"><pre>curl --proto '=https' --tlsv1.2 -LsSf https://github.com/midnightntwrk/compact/releases/latest/download/compact-installer.sh | sh
 <span class="c"># restart the terminal, then pin the compiler version from the support matrix</span>
-compact update 0.31.1
+compact update 0.36.0
 compact compile --version</pre></div>
-      <p class="note">As of 25 Oct 2026, 0.31.1 is both the version in the docs example and the one the official examples pin. Check the <a href="https://docs.midnight.network/relnotes/support-matrix" target="_blank" rel="noopener">support matrix</a> first. A bare <code>compact update</code> takes the newest release, which can be ahead of the public networks.</p>
+      <p class="note">As of 11 Nov 2026, 0.36.0 (Compact language 0.28) is the compiler the support matrix lists for Preview, Preprod and Mainnet, which all run ledger 9. The official examples pin the same version. Check the <a href="https://docs.midnight.network/relnotes/support-matrix" target="_blank" rel="noopener">support matrix</a> first. A bare <code>compact update</code> takes the newest release, which can be ahead of the public networks.</p>
       <p class="note warn"><code>compact compile +&lt;version&gt;</code> only <em>selects</em> a version you already have. Run <code>compact update &lt;version&gt;</code> first, or the build fails on a clean machine.</p>
     </div></li>
 
     <li><div class="step-body">
       <h3>Run a local proof server (Docker)</h3>
-      <div class="code"><pre>docker run -p 6300:6300 midnightntwrk/proof-server:8.1.3</pre></div>
+      <div class="code"><pre>docker run -p 6300:6300 midnightntwrk/proof-server:9.0.0</pre></div>
       <ul>
-        <li>The tag is the one the docs list today. Match it to the support matrix.</li>
+        <li>9.0.0 is the ledger 9 proof server that the docs and the support matrix list today. Match the tag to the support matrix.</li>
         <li>In the Lace wallet, go to Settings › Midnight and choose <code>Local (http://localhost:6300)</code>.</li>
-        <li>The <code>create-mn-app</code> and <code>midnight-examples</code> projects start their own proof server with Docker Compose. You only need this one for wallets and the public networks.</li>
+        <li>The <code>midnight-examples</code> projects start their own proof server with Docker Compose. You only need this one for wallets and the public networks.</li>
       </ul>
     </div></li>
 
@@ -333,7 +333,8 @@ claude plugin install --scope user compact-examples@midnight-expert
 claude plugin install --scope user midnight-dapp-dev@midnight-expert
 claude plugin install --scope user midnight-verify@midnight-expert
 claude plugin install --scope user midnight-tooling@midnight-expert
-claude plugin install --scope user midnight-wallet@midnight-expert</pre></div>
+claude plugin install --scope user midnight-wallet@midnight-expert
+claude plugin install --scope user compact-cli-dev@midnight-expert</pre></div>
       <p>Restart Claude Code, then run <code>/midnight-expert:doctor</code> to check the environment.</p>
       <p><b>Edda Labs Midnight plugin:</b></p>
       <div class="code"><pre>claude plugin marketplace add eddalabs/edda-marketplace
@@ -367,26 +368,32 @@ claude mcp list</pre></div>
     <li><div class="step-body">
       <h3>Set up wallets and get test funds</h3>
       <ul>
-        <li><b>Midnight:</b> install <a href="https://www.lace.io" target="_blank" rel="noopener">Lace</a> (Midnight enabled) or the <a href="https://1am.xyz" target="_blank" rel="noopener">1AM wallet</a>. Get tNIGHT from the <a href="https://faucet.preprod.midnight.network/" target="_blank" rel="noopener">Preprod faucet</a> or the <a href="https://faucet.preview.midnight.network/" target="_blank" rel="noopener">Preview faucet</a>. Fees are paid in DUST, which accrues from NIGHT you hold.</li>
-        <li><b>Midnight endpoints:</b> Preview has public Midnight-hosted endpoints. Preprod and Mainnet RPC go through Blockfrost and need a token from a "Midnight Preprod" (or Mainnet) project on <a href="https://blockfrost.io" target="_blank" rel="noopener">blockfrost.io</a>.</li>
+        <li><b>Midnight:</b> install <a href="https://www.lace.io" target="_blank" rel="noopener">Lace</a> (Midnight enabled) or the <a href="https://1am.xyz" target="_blank" rel="noopener">1AM wallet</a>. Get tNIGHT from the <a href="https://midnight-tmnight-preprod.nethermind.dev/" target="_blank" rel="noopener">Preprod faucet</a> or the <a href="https://faucet.preview.midnight.network/" target="_blank" rel="noopener">Preview faucet</a>. Fees are paid in DUST, which accrues from NIGHT you hold.</li>
+        <li><b>Midnight endpoints:</b> Preview has public Midnight-hosted endpoints. Preprod and Mainnet RPC and indexer go through Blockfrost and need a token from a "Midnight Preprod" (or Mainnet) project on <a href="https://blockfrost.io" target="_blank" rel="noopener">blockfrost.io</a>.</li>
+        <li><b>Ledger 9 upgrade:</b> Preview was relaunched as a new ledger 9 chain on 7 Nov 2026, so contracts deployed there earlier are gone. Preprod upgraded in place on 9 Nov 2026. Wallet SDK 1.x can't transact on either.</li>
         <li><b>Cardano:</b> set Lace or Eternl to Preprod, get test ADA from the <a href="https://docs.cardano.org/cardano-testnets/tools/faucet" target="_blank" rel="noopener">testnet faucet</a>, and create a free Cardano Preprod project key on Blockfrost, or use <a href="https://koios.rest" target="_blank" rel="noopener">Koios</a>.</li>
       </ul>
-      <p class="note">A brand-new wallet on Midnight Preprod takes about 78 minutes to sync to the chain tip, according to the official examples README. Start on the local devnet.</p>
+      <p class="note">A brand-new wallet on Midnight Preprod takes well over an hour to sync from genesis (one run took 88 minutes), according to the official examples README. Start on the local devnet.</p>
     </div></li>
 
     <li><div class="step-body">
       <h3>Build something</h3>
-      <p><b>Midnight</b>: scaffold, then follow the official learning path. Run this in WSL:</p>
-      <div class="code"><pre>npx create-mn-app@latest my-app
-cd my-app
-npm run setup            <span class="c"># local devnet + compile + deploy; no wallet or faucet needed</span></pre></div>
-      <p>Next, work through <a href="https://github.com/midnightntwrk/midnight-examples" target="_blank" rel="noopener">midnight-examples</a> in order: hello-world, private-bid, battleship, private-tip-jar, shielded-chips, then zk-loan.</p>
+      <p><b>Midnight</b>: clone the official examples and run hello-world on a local network. Run this in WSL:</p>
+      <div class="code"><pre>git clone https://github.com/midnightntwrk/midnight-examples
+cd midnight-examples
+npm install &amp;&amp; npm run compile
+cd examples/hello-world
+npm run env:up           <span class="c"># local Midnight network in Docker; no wallet or faucet needed</span>
+npm run wait:dust
+npm run test:local
+npm run env:down</pre></div>
+      <p>Next, work through the <a href="https://github.com/midnightntwrk/midnight-examples#learning-path" target="_blank" rel="noopener">learning path</a> in order: hello-world, private-party, battleship, private-tip-jar, shielded-chips, zk-loan, then midnight-leaderboard to deploy a DApp to Vercel. The old <code>create-mn-app</code> scaffolder is archived. Its successor, <code>mnkit</code>, is in pre-release.</p>
       <p><b>Cardano</b>: an Aiken validator, plus MeshJS for off-chain transaction building:</p>
       <div class="code"><pre>aiken new my-org/hello
 cd hello
 aiken check &amp;&amp; aiken build   <span class="c"># writes plutus.json, the contract blueprint</span>
 npm install @meshsdk/core</pre></div>
-      <p><b>Try these in Claude Code:</b> <code>/midnight-dapp-dev:init</code>, <code>/compact-cli-dev:init</code>, <code>/midnight-tooling:devnet</code>, <code>/compact-core:review-compact</code>, <code>/compact-core:audit-compact</code>, and the <code>cf-review-contract</code> skill for Aiken validators.</p>
+      <p><b>Try these in Claude Code:</b> <code>/midnight-dapp-dev:init</code>, <code>/compact-cli-dev:init</code>, <code>/midnight-tooling:devnet</code>, <code>/compact-core:review-compact</code>, <code>/compact-core:audit-compact</code>, and <code>/cardano-dev-skills:review-contract</code> for Aiken validators.</p>
     </div></li>
   </ol>
 </section>
@@ -394,7 +401,7 @@ npm install @meshsdk/core</pre></div>
 <section id="watch">
   <h2>Watch-outs</h2>
   <ul class="watch">
-    <li><strong>Old tutorials point at archived repos.</strong><code>example-counter</code> and <code>midnight-local-dev</code> are archived. Use <code>create-mn-app</code> and <code>midnight-examples</code> instead. Today the official examples pin Compact language 0.23, compiler 0.31.1, and midnight-js 4.1.1.</li>
+    <li><strong>Old tutorials point at archived repos.</strong><code>example-counter</code>, <code>midnight-local-dev</code> and <code>create-mn-app</code> are archived. Use <code>midnight-examples</code> instead. Today the official examples pin Compact language 0.28, compiler 0.36.0, midnight-js 5.0.0 and wallet SDK 2.0.0. Code written for ledger 8 (compiler 0.31 or older, wallet SDK 1.x) needs updating.</li>
     <li><strong>A successful <code>compact</code> run on Windows proves nothing.</strong>It's the NTFS tool, and it exits 0. Run <code>which compact</code> inside WSL to confirm you're using the real one.</li>
     <li><strong>Pin compiler versions explicitly.</strong>Run <code>compact update &lt;v&gt;</code> before <code>compact compile +&lt;v&gt;</code>, and match the support matrix, not the newest release.</li>
     <li><strong>The cardano-dev-skills plugin bundles a lot of third-party documentation.</strong>Its own supply-chain notes list prompt injection through those docs as a risk. You can copy only the skills you need.</li>
