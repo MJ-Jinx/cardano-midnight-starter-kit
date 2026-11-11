@@ -168,6 +168,40 @@
    "archived": false
   },
   {
+   "name": "taste-skill",
+   "owner": "Leonxlnx",
+   "url": "https://github.com/Leonxlnx/taste-skill",
+   "repo": "Leonxlnx/taste-skill",
+   "tab": "ai",
+   "also": null,
+   "alsoCategory": null,
+   "chain": "both",
+   "category": "Agent skills",
+   "level": "Beginner",
+   "desc": "Frontend design skill for landing pages and DApp sites. It sets an art direction and checks the result in a real browser. The prompt guide shows how to brief it.",
+   "official": false,
+   "start": 0,
+   "note": "Needs Node 22+ and Chrome, Edge or Chromium. A full run takes about 30 to 45 minutes and a few hundred thousand tokens.",
+   "tags": [
+    "frontend",
+    "design",
+    "ui"
+   ],
+   "links": [
+    {
+     "label": "Prompt guide",
+     "url": "https://www.tasteskill.dev/guide"
+    },
+    {
+     "label": "Site",
+     "url": "https://tasteskill.dev"
+    }
+   ],
+   "stars": 113028,
+   "updated": "2026-11",
+   "archived": false
+  },
+  {
    "name": "Midnight-Skills",
    "owner": "Kali-Decoder",
    "url": "https://github.com/Kali-Decoder/Midnight-Skills",
