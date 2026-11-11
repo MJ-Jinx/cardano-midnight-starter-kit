@@ -105,12 +105,13 @@ header.top h1 { font-size: clamp(2.1rem, 9.2vw, 3.6rem); font-weight: 800; lette
 header.top h1 .amp { color: var(--cardano); }
 .hero-sub { font-size: 1.12rem; line-height: 1.5; color: var(--muted); border-left: 2px solid var(--line); padding-left: 20px; }
 .hero-sub strong { color: var(--fg); font-weight: 600; }
-header.top .notice { margin-top: 30px; max-width: none; }
+header.top .notice { margin-top: 26px; max-width: none; padding: 8px 12px; font-size: 0.8rem; line-height: 1.5; border-radius: 6px; }
 @media (max-width: 760px) {
   .hero-main { grid-template-columns: minmax(0, 1fr); }
   .for { margin-top: 34px; }
   .hero-sub { max-width: 30em; }
   .hero-sub br.d { display: none; }
+  .filters { padding: 12px; }
 }
 
 /* Tab bar + search */
@@ -189,7 +190,9 @@ ul.watch li strong { display: block; }
 .cat-head p { color: var(--muted); max-width: 70ch; }
 .levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 18px; font-size: 0.9rem; color: var(--muted); }
 .levels div { display: flex; gap: 8px; align-items: baseline; }
-.filters { display: grid; gap: 10px; }
+.filters { display: grid; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 14px 16px; }
+.filters .fbtn { background: var(--bg); }
+.filters .fbtn[aria-pressed="true"] { background: var(--fg); }
 .frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .frow .lbl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
 .fbtn {
