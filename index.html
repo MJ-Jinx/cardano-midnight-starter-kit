@@ -37,7 +37,7 @@
   --lvl-i: #1a4fb8;  --lvl-i-bg: #e4ebfa;
   --lvl-a: #a03a1c;  --lvl-a-bg: #fbe8e2;
   --warn: #8a5300;   --warn-bg: #fbf0dc;
-  --official-bg: #0e6b5f; --official-fg: #ffffff;
+  --official-bg: #0e6b5f; --official-fg: #ffffff; --official-glow: rgba(18, 168, 140, 0.55);
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
@@ -48,7 +48,7 @@
     --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
     --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
     --warn: #f2bb62; --warn-bg: #33270f;
-    --official-bg: #5fcdb9; --official-fg: #0e1015;
+    --official-bg: #5fcdb9; --official-fg: #0e1015; --official-glow: rgba(95, 205, 185, 0.6);
     color-scheme: dark;
   }
 }
@@ -57,7 +57,7 @@
   --accent: #86abff; --cardano: #7ea2ff; --midnight-bg: #e6e9ef; --midnight-fg: #0e1015;
   --lvl-b: #6fd39b; --lvl-b-bg: #15301f; --lvl-i: #93b3ff; --lvl-i-bg: #18233d; --lvl-a: #f3a088; --lvl-a-bg: #3a1d16;
   --warn: #f2bb62; --warn-bg: #33270f;
-  --official-bg: #5fcdb9; --official-fg: #0e1015;
+  --official-bg: #5fcdb9; --official-fg: #0e1015; --official-glow: rgba(95, 205, 185, 0.6);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -111,7 +111,6 @@ header.top .notice { margin-top: 26px; max-width: none; padding: 8px 12px; font-
   .for { margin-top: 34px; }
   .hero-sub { max-width: 30em; }
   .hero-sub br.d { display: none; }
-  .filters { padding: 12px; }
 }
 
 /* Tab bar + search */
@@ -148,7 +147,7 @@ section > p, .prose { max-width: 68ch; }
 .chip.lvl-b { background: var(--lvl-b-bg); color: var(--lvl-b); }
 .chip.lvl-i { background: var(--lvl-i-bg); color: var(--lvl-i); }
 .chip.lvl-a { background: var(--lvl-a-bg); color: var(--lvl-a); }
-.chip.src-o { background: var(--official-bg); color: var(--official-fg); }
+.chip.src-o { background: var(--official-bg); color: var(--official-fg); box-shadow: 0 0 0 1px var(--official-glow), 0 0 10px 1px var(--official-glow); }
 .chip.src-c { color: var(--muted); border: 1px dashed var(--muted); }
 .notice { border: 1px solid var(--warn); background: var(--warn-bg); border-radius: 8px; padding: 12px 14px; font-size: 0.93rem; line-height: 1.55; max-width: 78ch; }
 .notice strong { color: var(--warn); }
@@ -188,8 +187,13 @@ ul.watch li strong { display: block; }
 /* Catalog view */
 .cat-head { display: grid; gap: 8px; }
 .cat-head p { color: var(--muted); max-width: 70ch; }
-.levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 18px; font-size: 0.9rem; color: var(--muted); }
-.levels div { display: flex; gap: 8px; align-items: baseline; }
+/* Label key: Level | Source, chips in an aligned column */
+.legend { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--line); border-radius: 10px; }
+.legend-col { padding: 14px 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.legend-col + .legend-col { border-left: 1px solid var(--line); }
+.legend dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 12px; align-items: baseline; }
+.legend dt, .legend dd { margin: 0; }
+.legend dd { font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
 .filters { display: grid; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 14px 16px; }
 .filters .fbtn { background: var(--bg); }
 .filters .fbtn[aria-pressed="true"] { background: var(--fg); }
@@ -240,6 +244,13 @@ footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
   [id] { scroll-margin-top: 12px; }
   ol.steps > li { grid-template-columns: 34px minmax(0, 1fr); gap: 0 10px; }
   ol.steps > li::before { width: 28px; height: 28px; font-size: 0.92rem; }
+}
+/* Catalog panels on narrow screens (after their base rules so these win) */
+@media (max-width: 760px) {
+  .filters { padding: 12px; }
+  .legend { grid-template-columns: minmax(0, 1fr); }
+  .legend-col { padding: 12px; }
+  .legend-col + .legend-col { border-left: 0; border-top: 1px solid var(--line); }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
@@ -459,14 +470,22 @@ npm install @meshsdk/core</pre></div>
     <div class="cat-head">
       <h2 id="cat-title">Midnight</h2>
       <p id="cat-intro"></p>
-      <div class="levels">
-        <div><span class="chip lvl-b">Beginner</span><span>Docs, starters, hosted tools</span></div>
-        <div><span class="chip lvl-i">Intermediate</span><span>SDKs, libraries, dev tools, demo apps</span></div>
-        <div><span class="chip lvl-a">Advanced</span><span>Protocol contracts, node and ledger internals, research</span></div>
+    </div>
+    <div class="legend" role="group" aria-label="What the labels mean">
+      <div class="legend-col">
+        <div class="kicker">Level</div>
+        <dl>
+          <dt><span class="chip lvl-b">Beginner</span></dt><dd>Docs, starters, hosted tools</dd>
+          <dt><span class="chip lvl-i">Intermediate</span></dt><dd>SDKs, libraries, dev tools, demo apps</dd>
+          <dt><span class="chip lvl-a">Advanced</span></dt><dd>Protocol contracts, node and ledger internals, research</dd>
+        </dl>
       </div>
-      <div class="levels">
-        <div><span class="chip src-o">&#10003; Official</span><span>Published by the chain's own organizations: Midnight, Cardano Foundation, Intersect, IOG</span></div>
-        <div><span class="chip src-c">Community</span><span>Everyone else. Listed, not audited, so check before you use it</span></div>
+      <div class="legend-col">
+        <div class="kicker">Source</div>
+        <dl>
+          <dt><span class="chip src-o">&#10003; Official</span></dt><dd>Published by the chain's own organizations: Midnight, Cardano Foundation, Intersect, IOG</dd>
+          <dt><span class="chip src-c">Community</span></dt><dd>Everyone else. Listed, not audited, so check before you use it</dd>
+        </dl>
       </div>
     </div>
     <div id="starts-wrap" hidden>
@@ -529,7 +548,7 @@ npm install @meshsdk/core</pre></div>
   var LVL = { Beginner: 'b', Intermediate: 'i', Advanced: 'a' };
   var CHAIN = { midnight: 'Midnight', cardano: 'Cardano', both: 'Cardano + Midnight' };
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var state = { view: 'setup', cat: 'all', level: 'all', src: 'all', q: '', sort: 'default' };
+  var state = { view: 'all', cat: 'all', level: 'all', src: 'all', q: '', sort: 'default' };
   var data = null;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -709,7 +728,7 @@ npm install @meshsdk/core</pre></div>
     } else if (h && document.getElementById(h) && document.getElementById('view-setup').contains(document.getElementById(h))) {
       state.view = 'setup';
     } else if (!h) {
-      state.view = 'setup';
+      state.view = 'all';   // landing view: the full catalog
     }
     render();
     if (h && VIEWS.indexOf(h) < 0) { var t = document.getElementById(h); if (t) t.scrollIntoView(); }

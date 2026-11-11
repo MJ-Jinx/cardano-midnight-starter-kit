@@ -12,7 +12,7 @@ A setup guide for Claude Code in VS Code, plus a searchable catalog of 370+ repo
 ## What's inside
 
 - **Setup guide:** Windows (WSL), macOS and Linux. It covers VS Code extensions, Node, the Compact toolchain, the proof server, Aiken, Claude Code plugins and skills, MCP servers, wallets, faucets and first builds, plus watch-outs.
-- **All tools tab:** every catalog entry in one list, grouped by section (Midnight, Cardano, AI tools) with a section filter.
+- **All tools tab (the page opens here):** every catalog entry in one list, grouped by section (Midnight, Cardano, AI tools) with a section filter.
 - **Midnight tab:** official repos, community tools and DApps, every MIP, and the projects listed in Midnight Awesome DApps.
 - **Cardano tab:** languages, SDKs, chain APIs, infrastructure, DEXs, lending, oracles and research.
 - **AI tools tab:** Claude Code plugins, agent skills and MCP servers for both chains.
