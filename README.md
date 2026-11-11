@@ -64,13 +64,13 @@ The README banner is `assets/readme-banner.png` (1280×640). It is a separate im
 
 The banner at the top of the site is HTML and CSS in `index.html`, so it adapts to phones and dark mode. Its logos are alpha masks in `assets/logos/`, coloured by CSS.
 
-The preview image shown when the link is shared is `og-image.png`. Its source is `assets/banner-source.html`. To change it, edit that file and take a 1200×630 screenshot, for example with headless Edge or Chrome:
+The preview image shown when the link is shared (Discord, X, Slack and others) is `og-image.png`, a copy of the README banner. To change it:
 
-```bash
-msedge --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=8000 --screenshot=og-image.png file:///full/path/to/assets/banner-source.html
-```
+1. Replace `og-image.png` (1280×640) and keep `assets/readme-banner.png` in sync.
+2. In `index.html`, bump the `?v=` value on the `og:image` and `twitter:image` URLs, for example `og-image.png?v=20261111`. Social sites cache previews by URL, and the new value makes them fetch the new image.
+3. To refresh a preview that was already posted, share the link with any query added, for example `https://mj-jinx.github.io/cardano-midnight-starter-kit/?v=2`. Discord caches each page URL's embed, so a new URL gets a fresh one.
 
-Social sites cache previews, so a changed banner can take a while to show up where the link was already shared.
+`assets/banner-source.html` is the earlier generated preview design (1200×630), kept for reference.
 
 ## Suggest a fix
 
