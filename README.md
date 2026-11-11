@@ -1,4 +1,4 @@
-[![Cardano & Midnight Starter Kit](og-image.png)](https://mj-jinx.github.io/cardano-midnight-starter-kit/)
+[![Cardano & Midnight Starter Kit](assets/readme-banner.png)](https://mj-jinx.github.io/cardano-midnight-starter-kit/)
 
 # Cardano & Midnight Starter Kit
 
@@ -55,7 +55,9 @@ You can run either one by hand from the **Actions** tab.
 
 ## Banner
 
-The banner (`og-image.png`) is the preview image shown when the link is shared. Its source is `assets/banner-source.html`. To change it, edit that file and take a 1200×630 screenshot, for example with headless Edge or Chrome:
+The README banner is `assets/readme-banner.png` (1280×640). It is a separate image, so update its commands when the guide's commands change.
+
+The preview image shown when the link is shared is `og-image.png`. Its source is `assets/banner-source.html`. To change it, edit that file and take a 1200×630 screenshot, for example with headless Edge or Chrome:
 
 ```bash
 msedge --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=8000 --screenshot=og-image.png file:///full/path/to/assets/banner-source.html
